@@ -41,3 +41,5 @@ Caution: make your working directory clean before you do this (either stash or c
   git add .
   git commit -a -m "First pages commit"
   git push origin gh-pages
+  
+  Last edit 25.5.2015
