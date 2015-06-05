@@ -10,7 +10,7 @@ $(sagecell.init(
 		    autoeval: false,
 		    linked: false,
 		    hide: ['messages', 'computationID', 'files', 'sageMode', 'editorToggle', 'sessionTitle', 'done', 'permalink'],
-		    evalButtonText: 'Go!'});
+		    evalButtonText: 'Launch the Interactive Applet Now'});
 	}
 
 	if ($('.sagecell-linked').length) {
