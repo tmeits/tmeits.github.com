@@ -27,7 +27,10 @@
 <h1>Scientific Python in the Browser</h1>
 <p>It's coming!  
 <div class="sagecell-plot" id="sagecell2"><script type="application/sage">
-show("Hello World!")
+x = var('x')
+y = function('y', x)
+de = diff(y,x,2) - y == x
+show(desolve(de, y))
 </script></div>
 
 <script type="text/javascript">sageFooter()</script>
