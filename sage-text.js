@@ -1,7 +1,7 @@
 function sageFooter() {
 	document.write('<div class="footer"><p>' +
 		'An Interactive Applet powered by Sage and MathJax. ' +
-		' &copy <a href="#"> Prof. Vlad Shishov.</a>, ' +
+		' &copy <a href="#"> Prof. Vlad Shishov</a>, ' +
 		'2012-<script>document.write(new Date().getFullYear())</script><noscript>2015</noscript> ' +
 		'</p></div>')
 	}
