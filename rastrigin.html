@@ -40,7 +40,7 @@ def fitnessRastrigin2(x,y):
     return fitnessRastrigin([x,y])
 var('y')
 @interact
-def rastrigin_contour_plot(colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
+def rastrigin_contour_plot(x_range=range_slider(-10,10,1,(0,10), label='X-Y Range'),colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
     show(contour_plot(fitnessRastrigin2, (x,-5,5), (y,-5,5)))
 </script>
 </div>
