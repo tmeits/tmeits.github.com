@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+
+<!-- Local files containing the website icon and stylesheet. -->
+<link rel="stylesheet" type="text/css" href="theme.css">
+
+
+<!-- Imports needed to use the Sage cell server. -->
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script type="text/javascript" src="sagecell.js"></script>
+<script type="text/javascript" src="sage-text.js"></script>
+
+
+<!-- Additional CSS customizations --> 
+<style type="text/css"></style>
+
+<!-- Page title --> 
+<title>Vaganov-Shashkin Growth Model</title>
+</head>
+
+
+<body>
+<h1>Vaganov-Shashkin Growth Model</h1>
+<p>It's coming!  
+<!--<div class="sagecell-plot" id="sagecell2"><script type="application/sage">-->
+<div class="sagecell-plot">
+<script type="application/sage">
+import numpy as np
+def fitnessRastrigin(x):
+    """
+    In mathematical optimization, the Rastrigin function is a non-convex function used as a performance test problem for optimization algorithms.
+    """
+    A=np.array(x)
+    return 10.*len(A) + sum(A^2-10.*np.cos(2.*n(pi)*A))
+def fitnessRastrigin2(x,y):
+    return fitnessRastrigin([x,y])
+var('y')
+contour_plot(fitnessRastrigin2, (x,-5,5), (y,-5,5))
+</script>
+</div>
+
+<script type="text/javascript">sageFooter()</script>
+
+</body>
+</html>
+
