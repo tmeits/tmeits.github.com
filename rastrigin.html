@@ -30,6 +30,7 @@
 <div class="sagecell-plot">
 <script type="application/sage">
 import numpy as np
+import math
 def fitnessRastrigin(x):
     """
     In mathematical optimization, the Rastrigin function is a non-convex function used as a performance test problem for optimization algorithms.
@@ -40,7 +41,8 @@ def fitnessRastrigin2(x,y):
     return fitnessRastrigin([x,y])
 var('y');
 @interact
-def rastrigin_contour_plot(x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
+def rastrigin_contour_plot(f=selector(values=[fitnessRastrigin2(x,y), sin(x,y), cos(x,y), tan(x,y)], label="Select Test Function"),
+                           x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
                            plotpoints=('Value of plot_points',[25,50, 75,100, 125]),
                            colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
     xmin, xmax = x_range
