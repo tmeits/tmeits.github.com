@@ -41,10 +41,12 @@ def fitnessRastrigin2(x,y):
 var('y');
 @interact
 def rastrigin_contour_plot(x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
+                           plotpoints=('Value of plot_points',[25,50, 75,100, 125]),
                            colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
     xmin, xmax = x_range
-    show(contour_plot(fitnessRastrigin2, (x,xmin, xmax), (y,xmin, xmax), 
-                      plot_points=50, fill=True, contours=15, colorbar=True, cmap='cool', axes=True, frame=False))
+    show(contour_plot(fitnessRastrigin2, (x,xmin, xmax), (y,xmin, xmax),
+                      plot_points=plotpoints, fill=True, contours=15, colorbar=True, 
+                      cmap='cool', axes=True, frame=False))
 
 </script>
 </div>
