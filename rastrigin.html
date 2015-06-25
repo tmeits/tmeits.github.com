@@ -30,6 +30,8 @@
 <div class="sagecell-plot">
 <script type="application/sage">
 import numpy as np
+#http://docs.scipy.org/doc/scipy/reference/optimize.html
+import scipy.optimize
 import math
 def fitnessRastrigin(x):
     """
@@ -39,14 +41,16 @@ def fitnessRastrigin(x):
     return 10.*len(A) + sum(A^2-10.*np.cos(2.*n(pi)*A))
 def fitnessRastrigin2(x,y):
     return fitnessRastrigin([x,y])
+def rosen2(x,y):
+    return scipy.optimize.rosen([x,y])
 var('y');
 @interact
-def rastrigin_contour_plot(f=selector(values=[fitnessRastrigin2(x,y), sin(x,y), cos(x,y), tan(x,y)], label="Select Test Function"),
+def rastrigin_contour_plot(f=selector(values=[fitnessRastrigin2(x,y), rosen2(x,y)], label="Select Test Function"),
                            x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
                            plotpoints=('Value of plot_points',[25,50, 75,100, 125]),
                            colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
     xmin, xmax = x_range
-    show(contour_plot(fitnessRastrigin2, (x,xmin, xmax), (y,xmin, xmax),
+    show(contour_plot(f, (x,xmin, xmax), (y,xmin, xmax),
                       plot_points=plotpoints, fill=True, contours=15, colorbar=True, 
                       cmap='cool', axes=True, frame=False))
 
