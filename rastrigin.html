@@ -34,6 +34,7 @@ import numpy as np
 #http://docs.scipy.org/doc/scipy/reference/optimize.html
 import scipy.optimize
 import math
+import matplotlib.cm
 def fitnessRastrigin(x):
     """
     In mathematical optimization, the Rastrigin function is a non-convex function used as a performance test problem for optimization algorithms.
@@ -45,15 +46,17 @@ def fitnessRastrigin2(x,y):
 def rosen2(x,y):
     return scipy.optimize.rosen([x,y])
 var('y');
+#print matplotlib.cm.datad.keys()
 @interact
 def rastrigin_contour_plot(f=selector(values=[fitnessRastrigin2(x,y), rosen2(x,y)], label="Select Test Function"),
                            x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
-                           plotpoints=('Value of plot_points',[25,50, 75,100, 125]),
-                           color_map = selector(['cool','hsv', 'winter'],default = 'hsv')):
+                           plotpoints=('Value of plot_points',[50,100, 250,500, 750]),
+                           color_map = selector(matplotlib.cm.datad.keys(),default = 'hsv'),
+                           fill_box=checkbox(True, 'Fill'), color_bar=checkbox(False, 'Color Bar')):
     xmin, xmax = x_range
     show(contour_plot(f, (x,xmin, xmax), (y,xmin, xmax),
-                      plot_points=plotpoints, fill=True, contours=15, colorbar=True, 
-                      cmap=color_map, axes=True, frame=False))
+                      plot_points=plotpoints, fill=fill_box, contours=15, colorbar=color_bar, 
+                      cmap=color_map, axes=False, frame=True))
 </script>
 </div>
 
