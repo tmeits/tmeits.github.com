@@ -49,12 +49,11 @@ var('y');
 def rastrigin_contour_plot(f=selector(values=[fitnessRastrigin2(x,y), rosen2(x,y)], label="Select Test Function"),
                            x_range=range_slider(-10,10,1,(-5,5), label='X-Y Range'),
                            plotpoints=('Value of plot_points',[25,50, 75,100, 125]),
-                           colorize = selector(['BW','Line color', 'Filled'],default = 'BW')):
+                           color_map = selector(['cool','hsv', 'winter'],default = 'hsv')):
     xmin, xmax = x_range
     show(contour_plot(f, (x,xmin, xmax), (y,xmin, xmax),
                       plot_points=plotpoints, fill=True, contours=15, colorbar=True, 
-                      cmap='cool', axes=True, frame=False))
-
+                      cmap=color_map, axes=True, frame=False))
 </script>
 </div>
 
