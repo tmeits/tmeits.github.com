@@ -1,0 +1,80 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+
+<!-- Local files containing the website icon and stylesheet. -->
+<link rel="stylesheet" type="text/css" href="theme.css">
+<!--<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">-->
+
+<!-- Imports needed to use the Sage cell server. -->
+
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<!--<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>-->
+
+<!--<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="embedded_sagecell.js"></script>-->
+<script type="text/javascript" src="sagecell.js"></script>
+<script type="text/javascript" src="sage-text.js"></script>
+
+
+<!-- Additional CSS customizations --> 
+<style type="text/css"></style>
+
+<!-- Page title --> 
+<title>Vaganov-Shashkin Growth Model</title>
+</head>
+
+
+<body>
+<h1>Vaganov-Shashkin Growth Model</h1>
+<p>It's coming!  
+<div class="sagecell-plot" id="sagecell2"><script type="application/sage">
+<!--<div class="sagecell-auto-hide">-->
+<script type="application/sage">
+# coding=utf-8
+__author__ = 'vilyin'
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def meanSquaredError(ringc, crn):
+    """
+    Фитнесс функция, как сумма среднеквадратичных невязок (Mean squared error)
+    http://en.wikipedia.org/wiki/meanSquaredError
+    """
+    n = len(ringc)
+    s = 0.0
+    for i in range(n):
+        s += (crn[i] - ringc[i]) ** 2
+    return -1.0 * (1.0 / float(n)) * s
+
+def  interval_random_sample(n, a, b):
+    return (b - a) * np.random.random_sample(n) + a
+
+# test
+min_crn = 0.0
+max_crn = 2.0
+count_year = 15
+irs1 = interval_random_sample(count_year, min_crn, max_crn)
+irs2 = interval_random_sample(count_year, min_crn, max_crn)
+print(type(irs1), irs1, irs2, meanSquaredError(irs1, irs2))
+for i in range(10):
+    irs1 = interval_random_sample(count_year, min_crn, max_crn)
+    irs2 = interval_random_sample(count_year, min_crn, max_crn)
+    print(meanSquaredError(irs1, irs2))
+
+x = np.linspace(1, 15, 15)
+line, = plt.plot(x, irs1)
+line, = plt.plot(x, irs2)
+plt.show()
+</script>
+</div>
+
+<script type="text/javascript">sageFooter()</script>
+
+</body>
+</html>
+
