@@ -2,7 +2,7 @@
 __author__ = 'vilyin'
 
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 def meanSquaredError(ringc, crn):
     """
@@ -18,5 +18,19 @@ def meanSquaredError(ringc, crn):
 def  interval_random_sample(n, a, b):
     return (b - a) * np.random.random_sample(n) + a
 
-irs = interval_random_sample(15, 0.1, .19)
-print(irs)
+# test
+min_crn = 0.0
+max_crn = 2.0
+count_year = 15
+irs1 = interval_random_sample(count_year, min_crn, max_crn)
+irs2 = interval_random_sample(count_year, min_crn, max_crn)
+print(type(irs1), irs1, irs2, meanSquaredError(irs1, irs2))
+for i in range(10):
+    irs1 = interval_random_sample(count_year, min_crn, max_crn)
+    irs2 = interval_random_sample(count_year, min_crn, max_crn)
+    print(meanSquaredError(irs1, irs2))
+
+x = np.linspace(1, 15, 15)
+line, = plt.plot(x, irs1)
+line, = plt.plot(x, irs2)
+plt.show()
