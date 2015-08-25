@@ -37,7 +37,8 @@
 __author__ = 'vilyin'
 
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+from pylab import *
 
 def meanSquaredError(ringc, crn):
     """
@@ -66,9 +67,9 @@ for i in range(10):
     print(meanSquaredError(irs1, irs2))
 
 x = np.linspace(1, 15, 15)
-line, = plt.plot(x, irs1)
-line, = plt.plot(x, irs2)
-plt.show()
+p1 = list_plot(zip(x, irs1), plotjoined=true, color="red", legend_label="ringc")
+p2 = list_plot(zip(x, irs2), plotjoined=true, color="green", legend_label="crn")
+p1+p2
 </script>
 </div>
 
