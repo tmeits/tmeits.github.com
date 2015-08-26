@@ -1,0 +1,68 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+
+<!-- Local files containing the website icon and stylesheet. -->
+<link rel="stylesheet" type="text/css" href="theme.css">
+<!--<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">-->
+
+<!-- Imports needed to use the Sage cell server. -->
+
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<!--<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>-->
+
+<!--<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="embedded_sagecell.js"></script>-->
+<script type="text/javascript" src="sagecell.js"></script>
+<script type="text/javascript" src="sage-text.js"></script>
+
+
+<!-- Additional CSS customizations --> 
+<style type="text/css"></style>
+
+<!-- Page title --> 
+<title>Vaganov-Shashkin Growth Model</title>
+</head>
+
+
+<body>
+<h1>Vaganov-Shashkin Growth Model</h1>
+<p>It's coming!  
+<div class="sagecell-plot" id="sagecell2">
+<script type="application/sage">
+# coding=utf-8
+__author__ = 'vilyin'
+
+def day_length(Day, Latitude=(-(36+51/60.))):
+    """
+        This calculates the number of hours (hours) and fraction of the day (b) in %daylight.
+        http://www.gandraxa.com/length_of_day.xml
+    """
+    if Day < 0:
+        Day=0
+
+    Pi=n(pi)
+    Axis=23.439*Pi/180.
+    j=Pi/182.625 #constant (radians)
+
+    m=1-tan(Latitude*Pi/180.)*tan(Axis*cos(j*Day))
+    b=arccos(1-m)/Pi #fraction of the day the sun is up
+
+    if b < 0:
+        b=0
+    if b > 1:
+        b=1
+    hours=b*24 #hours of sunlight
+    return [b, hours]
+    
+</script>
+</div>
+
+<script type="text/javascript">sageFooter()</script>
+
+</body>
+</html>
+
