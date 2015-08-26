@@ -1,6 +1,6 @@
 function sageFooter() {
 	document.write('<div class="footer"><p>' +
-		'Vaganov-Shashkin Growth Model.' +
+		'Vaganov-Shashkin Growth Model.<br>' +
 		'An Interactive Applet powered by Sage and MathJax. ' +
 		' &copy <a href="#"> Prof. Vlad Shishov</a>, ' +
 		'2012-<script>document.write(new Date().getFullYear())</script><noscript>2015</noscript> ' +
