@@ -37,8 +37,8 @@
 __author__ = 'vilyin'
 
 import numpy as np
-#import matplotlib.pyplot as plt
-from pylab import *
+import matplotlib.pyplot as plt
+
 
 def meanSquaredError(ringc, crn):
     """
@@ -51,25 +51,36 @@ def meanSquaredError(ringc, crn):
         s += (crn[i] - ringc[i]) ** 2
     return -1.0 * (1.0 / float(n)) * s
 
-def  interval_random_sample(n, a, b):
+
+def interval_random_sample(n, a, b):
     return (b - a) * np.random.random_sample(n) + a
 
-# test
-min_crn = 0.0
-max_crn = 2.0
-count_year = 15
-irs1 = interval_random_sample(count_year, min_crn, max_crn)
-irs2 = interval_random_sample(count_year, min_crn, max_crn)
-print(type(irs1), irs1, irs2, meanSquaredError(irs1, irs2))
-for i in range(10):
+def py_plot_crn(min_crn = 0.2, max_crn = 1.9, min_year = 1940, max_year = 2015):
+    """ py_plot_crn """
+
+    count_year = max_year - min_year
     irs1 = interval_random_sample(count_year, min_crn, max_crn)
     irs2 = interval_random_sample(count_year, min_crn, max_crn)
-    print(meanSquaredError(irs1, irs2))
+    # print(type(irs1), irs1, irs2, meanSquaredError(irs1, irs2))
 
-x = np.linspace(1, 15, 15)
-p1 = list_plot(zip(x, irs1), plotjoined=true, color="red", legend_label="ringc")
-p2 = list_plot(zip(x, irs2), plotjoined=true, color="green", legend_label="crn")
-p1+p2
+    x = np.linspace(min_year, max_year, count_year)
+    line, = plt.plot(x, irs1)
+    line, = plt.plot(x, irs2)
+    plt.show()
+
+def sage_plot_crn(min_crn = 0.2, max_crn = 1.9, min_year = 1940, max_year = 2015):
+    """ sage_plot_crn """
+
+    count_year = max_year - min_year
+    irs1 = interval_random_sample(count_year, min_crn, max_crn)
+    irs2 = interval_random_sample(count_year, min_crn, max_crn)
+    x = np.linspace(min_year, max_year, count_year)
+    p1 = list_plot(zip(x, irs1), plotjoined=true, color="red", legend_label="ringc")
+    p2 = list_plot(zip(x, irs2), plotjoined=true, color="green", legend_label="crn")
+    show(p1+p2)
+
+py_plot_crn(0.2, 1.9, 1965, 2001)
+sage_plot_crn(0.2, 1.9, 1965, 2001)
 </script>
 </div>
 
