@@ -57,6 +57,61 @@ def day_length(Day, Latitude=(-(36+51/60.))):
         b=1
     hours=b*24 #hours of sunlight
     return [b, hours]
+def daylight_year(Latitude):
+    """
+        The length of daylight hours in a year
+    """
+    Days=range(365)
+    for idx in range(365):
+        Days[idx] = day_length(idx, Latitude)
+        Days[idx][0] = idx
+    return Days
+def plot_daylight_year(Latitude, LatStr):
+    dy=daylight_year(Latitude)
+    plt=list_plot(dy, color='steelblue',legend_label=LatStr)
+    plt.ymax(25.0); plt.ymin(-1.0)
+    plt.xmax(400.0); plt.xmin(0.0)
+    plt.axes_labels(['Day', 'Hours'])
+    plt.show(aspect_ratio=10,frame=True, gridlines=["major", True])
+
+@interact
+def plotDaylight(
+    clr=Color('green'),
+    manual=checkbox(True, 'Manual'),
+    redraw=checkbox(False, 'Redraw'),
+    Degrees=slider(0,90, 1, default=66, label='Degrees'),
+    Minutes=slider(0,60, 1, default=33,label='Minutes'),
+    #plotpoints=('Value of Latitude',[100,500,1000]),
+    Sity=('Value of Latitude',['Chokurdakh','Yakutsk','Arizona'])):
+    """
+        http://www.gandraxa.com/length_of_day.xml
+    """
+
+    Latitude=N(Degrees+Minutes/60)
+    if Sity == 'Chokurdakh' and manual == False:
+        Latitude=N(70.62); LatStr='Chokurdakh=70.62' #https://www.wolframalpha.com/input/?i=Chokurdakh
+    elif Sity == 'Yakutsk' and manual == False:
+        Latitude=N(62.03); LatStr='Yakutsk=62.03'
+    elif Sity == 'Arizona' and manual == False:
+        Latitude=N(70.62); LatStr='Arizona'
+    elif Latitude == 0:
+        LatStr='Equator'
+    elif Latitude == 90:
+        LatStr='Northpole'
+    else:
+        LatStr='Latitude=' + ("%2.2f" % N(Degrees+Minutes/60.)).rjust(6)
+    if redraw == True:
+        dy=daylight_year(N(Latitude))
+
+        plt=list_plot(dy, color='steelblue',legend_label=LatStr)
+        plt.ymax(25.0); plt.ymin(-1.0)
+        plt.xmax(370.0); plt.xmin(0.0)
+        plt.axes_labels(['Day of Year', 'Hours'])
+        plt.show(aspect_ratio=10,frame=True, gridlines=["major", True])
+    else:
+        print daylight_year(N(Latitude))
+        var('m')
+        show(arccos(1-m)/pi)
     
 </script>
 </div>
