@@ -1,6 +1,4 @@
-//browser window scroll (in pixels) after which the "back to top" link is shown
-var offset = 300,
-    //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-    offset_opacity = 1200,
-    //duration of the top scrolling animation (in ms)
-    scroll_top_duration = 700;
+$(document).ready(function(){
+    $(window).scroll(function () {if ($(this).scrollTop() > 0) {$('#scroller').fadeIn();} else {$('#scroller').fadeOut();}});
+    $('#scroller').click(function () {$('body,html').animate({scrollTop: 0}, 400); return false;});
+});
