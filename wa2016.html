@@ -39,6 +39,11 @@
     <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+    <!-- http://www.cssfontstack.com/Open-Sans-Condensed 
+         http://www.cssfontstack.com/Open-Sans -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
     
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
@@ -73,6 +78,9 @@
     <link rel="stylesheet" href="/static/css/material-photo-gallery.css">
     
     <link rel="stylesheet" href="/static/css/zoomwall.css">
+
+    <link rel="stylesheet" href="/static/css/scrollup.css" type="text/css" media="screen">
+    
     
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
    
@@ -146,6 +154,7 @@
 <body class="" id="">
     <noscript>
     </noscript>
+   
     <!-- Begin Menu -->
     <nav>
         <div class="menu">
@@ -202,6 +211,7 @@
         <div class="container block">
             <div class="col-1-1">
                 <h1>Topics to be covered</h1>
+                <h1 style="font: bold 35px Cantarell;">Topics to be covered</h1>
                 
                 <!--
                 <ul>
@@ -432,7 +442,13 @@
             <div class="m-p-g__fullscreen"></div>
         </div>
         -->
-        
+    <!-- all your content here -->
+
+    <a href="#" class="cd-top">Top</a>
+
+    <!-- link to scripts here -->
+    <script type='text/javascript' src='/static/js/scrollup.js'></script> 
+   
     <script src="/static/js/vendor/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.3/jquery.slicknav.min.js"></script>
     <script>
@@ -533,6 +549,7 @@
             var gallery = new MaterialPhotoGallery(elem);
         });
     </script>
+    
     
 </body>
 </html>
