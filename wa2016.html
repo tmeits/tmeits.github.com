@@ -82,6 +82,7 @@
 
     <link rel="stylesheet" href="/static/css/scrollup.css" type="text/css" media="screen">
     
+    <link rel="stylesheet" href="/static/css/responsiveslides.css" type="text/css">
     
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
    
@@ -180,7 +181,7 @@
                         1 August - 8 August 2016, Shushenskoe, Russia</h1>
     </div>
     <!-- End WA2016 -->
-    <!-- Begin Slider -->
+    <!-- css slider 
     <div id="slider">
         <figure>
             <img src="/static/img/slides/1.jpg" alt="" width="774" height="300">
@@ -190,7 +191,17 @@
             <img src="/static/img/slides/5.jpg" alt="" width="774" height="300">
         </figure>
     </div>
-    <!-- End Slider -->
+     /css slider -->
+    
+    <!-- responsiveslides -->
+    <ul class="rslides">
+        <li><img src="/static/img/slides/1.jpg" alt="" width="774" height="300"></li>
+        <li><img src="/static/img/slides/2.jpg" alt="" width="774" height="300"></li>
+        <li><img src="/static/img/slides/3.jpg" alt="" width="774" height="300"></li>
+        <li><img src="/static/img/slides/4.jpg" alt="" width="774" height="300"></li>
+        <li><img src="/static/img/slides/5.jpg" alt="" width="774" height="300"></li>
+    </ul>
+    <!-- /responsiveslides -->
     <!-- Begin Sponsor -->
     <!--<div class="row section grey">-->
     <div class="container block">
@@ -454,6 +465,29 @@
     
     <script type='text/javascript' src='/static/js/scrollup.js'></script> 
 
+    <script type='text/javascript' src="/static/js/responsiveslides.min.js"></script>
+    <script>
+        $(function() {
+            $(".rslides").responsiveSlides({
+                auto: true,             // Boolean: Animate automatically, true or false
+                speed: 500,            // Integer: Speed of the transition, in milliseconds
+                timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+                pager: false,           // Boolean: Show pager, true or false
+                nav: false,             // Boolean: Show navigation, true or false
+                random: false,          // Boolean: Randomize the order of the slides, true or false
+                pause: false,           // Boolean: Pause on hover, true or false
+                pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+                prevText: "Previous",   // String: Text for the "previous" button
+                nextText: "Next",       // String: Text for the "next" button
+                maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+                navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+                manualControls: "",     // Selector: Declare custom pager navigation
+                namespace: "rslides",   // String: Change the default namespace used
+                before: function(){},   // Function: Before callback
+                after: function(){}     // Function: After callback
+            });
+        });
+    </script>
     <script>
         /* top navbar */
         var nav = $('body > nav')
