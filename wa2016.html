@@ -13,7 +13,7 @@
                 h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
     </script>
-    <!--
+    <!-- old Typekit script
     <script src="https://use.typekit.net/ybr6ifz.js"></script>
     <script>
         try {
@@ -23,7 +23,7 @@
         } catch (e) {}
     </script> 
     -->
-    <!-- Universal Analytics -->
+    <!-- Universal GoogleAnalytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -49,7 +49,6 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     
-    <!-- http://html-generator.weebly.com/css-font-style-generator.html -->
     <!-- http://imageslidermaker.com/v1/ -->
     <!-- http://cssmenumaker.com/builder/8009051 -->
     <!-- http://cssmenumaker.com/menu/textured-responsive-drop-down-menu -->
@@ -223,7 +222,7 @@
         <div class="container block">
             <div class="col-1-1">
                 <h1>Topics to be covered</h1>
-                <h1 style="font: bold 35px Cantarell;">Topics to be covered</h1>
+                <!--<h1 style="font: bold 35px Cantarell;">Topics to be covered</h1>-->
                 
                 <!--
                 <ul>
@@ -407,24 +406,11 @@
    
     <a name="contact"></a>
     <div class="container block">
-        <h1></h1>
-        <div class="col-1-2">
+        <div class="col-1-1">
             <h1>Contact US</h1>
-            <p>
-                <!--You can contact us using the form below, or directly at the address <a href="mailto:vilyin@sfu-kras.ru">vilyin@sfu-kras.ru</a>. All incoming emails will be forwarded to the appropriate individuals. Replies will be published as soon as possible.-->
-                To contact us send an email to <a href="mailto:woodanatomy2016@gmail.com">woodanatomy2016@gmail.com</a> or use the form on the right.
-            </p>
+            <iframe src="https://docs.google.com/forms/d/1RaItyrj4_6Ko143YH3rBUnquFcUKDcE-1er6H0enfzw/viewform?embedded=true" width="900" height="1750" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe>
         </div>
-        <div class="col-1-2">
-            <!-- http://main-ip.ru/genform/register -->
-            <form method="POST" action="//formspree.io/vilyin@sfu-kras.ru">
-                <input type="email" name="_replyto" placeholder="Your email" />
-                <textarea name="message" rows="5" placeholder="Your message"></textarea>
-                <input type="text" name="_gotcha" style="display:none">
-                <!--<input type="hidden" name="_next" value="thanks.html" />-->
-                <button type="submit">Send</button>
-            </form>
-        </div>
+        
     </div>
     <!--</div> #16a1e7; #00AFF0;-->
     <!--<div class="row section green">-->
@@ -463,31 +449,6 @@
     <script src="/static/js/vendor/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.3/jquery.slicknav.min.js"></script>
     
-    <script type='text/javascript' src='/static/js/scrollup.js'></script> 
-
-    <script type='text/javascript' src="/static/js/responsiveslides.min.js"></script>
-    <script>
-        $(function() {
-            $(".rslides").responsiveSlides({
-                auto: true,             // Boolean: Animate automatically, true or false
-                speed: 500,            // Integer: Speed of the transition, in milliseconds
-                timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
-                pager: false,           // Boolean: Show pager, true or false
-                nav: false,             // Boolean: Show navigation, true or false
-                random: false,          // Boolean: Randomize the order of the slides, true or false
-                pause: false,           // Boolean: Pause on hover, true or false
-                pauseControls: true,    // Boolean: Pause when hovering controls, true or false
-                prevText: "Previous",   // String: Text for the "previous" button
-                nextText: "Next",       // String: Text for the "next" button
-                maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-                navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
-                manualControls: "",     // Selector: Declare custom pager navigation
-                namespace: "rslides",   // String: Change the default namespace used
-                before: function(){},   // Function: Before callback
-                after: function(){}     // Function: After callback
-            });
-        });
-    </script>
     <script>
         /* top navbar */
         var nav = $('body > nav')
@@ -586,7 +547,31 @@
             var gallery = new MaterialPhotoGallery(elem);
         });
     </script>
-    
+    <script type='text/javascript' src='/static/js/scrollup.js'></script> 
+
+    <script type='text/javascript' src="/static/js/responsiveslides.min.js"></script>
+    <script>
+        $(function() {
+            $(".rslides").responsiveSlides({
+                auto: true,             // Boolean: Animate automatically, true or false
+                speed: 500,             // Integer: Speed of the transition, in milliseconds
+                timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+                pager: false,           // Boolean: Show pager, true or false
+                nav: false,             // Boolean: Show navigation, true or false
+                random: true,           // Boolean: Randomize the order of the slides, true or false
+                pause: false,           // Boolean: Pause on hover, true or false
+                pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+                prevText: "Previous",   // String: Text for the "previous" button
+                nextText: "Next",       // String: Text for the "next" button
+                maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+                navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+                manualControls: "",     // Selector: Declare custom pager navigation
+                namespace: "rslides",   // String: Change the default namespace used
+                before: function(){},   // Function: Before callback
+                after: function(){}     // Function: After callback
+            });
+        });
+    </script>
     
 </body>
 </html>
