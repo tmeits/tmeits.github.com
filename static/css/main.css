@@ -305,11 +305,13 @@ body {
   line-height: 1.5em;
   /* font-family: 'proxima-nova-soft', sans-serif; */
   font-family: 'hedley-new-web', sans-serif;
+  /*  font-family: 'Special Elite', sans-serif;*/
   }
 
 h1, h2, h3, h4, h5, h6, p {
   /* font-family: 'proxima-nova-soft', sans-serif; */
   font-family: 'hedley-new-web', sans-serif;
+    /*font-family: 'Special Elite', sans-serif;*/
   -webkit-font-smoothing: antialiased; }
   h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child {
     margin-top: 0; }
