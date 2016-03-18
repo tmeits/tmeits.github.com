@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "currentPage": "index.html",
+    "versionFirst": "2.9.5",
+    "versionPublish": "2.9.5",
+    "name": "WoodAnatomy2016",
+    "theme": {
+      "name": "default",
+      "title": "Mobirise"
+    }
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": []
+    }
+  }
+}
