@@ -45,7 +45,7 @@
 }
 
 #toggle + label:after {
-    content: "Deadline"
+    content: "DeadLine"
 }
 
 .container {
