@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Wood Anatomy 2016</title>
@@ -61,6 +62,10 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/freenbar.min.css">
+
     <link rel="stylesheet" href="/static/css/main.css">
     <!-- Sliding Header Message Panel With Pure CSS – headerMessage -->
     <!-- http://www.cssscript.com/sliding-header-message-panel-with-pure-css-headermessage/ -->
@@ -78,9 +83,23 @@
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
 </head>
+
 <body class="" id="">
     <noscript>
     </noscript>
+    <!-- Freenbar's code starts here -->
+    <div id="barwrap">
+        <div class="bar">
+            <!--            <span id="head-image"><img src="img/authkey.png" alt=""></span>-->
+            <span id="text"><br>
+                <u><b>Dead line</b></u> for registration and application for financial support – 06, May, 2016
+                <br><u><b>Financial support</b></u> is available for 6 participants from Russia!
+            </span>
+            <span id="otherimg"></span>
+            <span id="ok"><a href="#">✔</a></span>
+        </div>
+    </div>
+    <!-- and ends here -->
     <!-- Begin Menu -->
     <nav>
         <div class="menu">
@@ -102,21 +121,90 @@
     <div class="container block">
         <br>
         <!-- TODO http://tomkenny.design/ -->
-        <h1 style="font: bold 55px/40px Pacifico, Sans-serif; text-align: center; color: #43b691; text-shadow: 0px 2px 6px #333;">International Summer School</h1>
-        <h1 style="font: bold 35px Denk One, Arial, Sans-serif; text-align: center; color: #6c6c6c; text-shadow: 0px 1px 2px #333;">Plant Ecology and Digital Wood Anatomy</h1>
-        <h1 style="font: italic 20px Georgia, Times, Serif;  text-align: center; color: #008fff; text-shadow: 0px 2px 6px #333;">
+        <h1 style="font: bold 55px/40px Pacifico, Sans-serif; letter-spacing: normal; text-align: center; color: #43b691; text-shadow: 0px 2px 6px #333;">International Summer School</h1>
+        <h1 style="font: bold 35px Denk One, Arial, Sans-serif; letter-spacing: normal; text-align: center; color: #6c6c6c; text-shadow: 0px 1px 2px #333;">Plant Ecology and Digital Wood Anatomy</h1>
+        <h1 style="font: italic 20px/20px Georgia, Times, Serif;  letter-spacing: normal; text-align: center; color: #008fff; text-shadow: 0px 2px 6px #333;">
             1-8 August 2016, Cheremushki, Khakasia, Russian Federation</h1>
     </div>
     <!-- /WA2016 -->
     <a name="venue"></a>
     <div class="row section grey">
         <div class="container narow block">
-            <h1>Venue</h1>
+            <h1 style="letter-spacing: normal;">Venue</h1>
             <div class="col-1-1">
+                <!--                <div class="row section">-->
                 <p>
-                    The closest airport is the International Airport of Abakan. Organizers from KhTI will meet participants at the airport and after the flight excursion planned around Abakan including lunch. Then participants will be transported to the Cheremushki (116 km from Abakan) by special bus.
+                    There are two flights between Moscow and Abakan every day.
                 </p>
-                <!-- К сожалению эти слова подставляет гугл-сервер-форм самостоятельно.  -->
+                <!-- table -->
+                <!--                    <div class="table-responsive">-->
+                <table class="table table-bordered  table-hover table-sm">
+                    <thead>
+                        <tr class="info">
+                            <th>Airlines</th>
+                            <th>Departure airport</th>
+                            <th>Arrival airport</th>
+                            <th>Departure</th>
+                            <th>Arrival</th>
+                            <th>Trip Duration</th>
+                            <th>Flight</th>
+                            <th>Aircraft</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="success">
+                            <td><a href="http://www.s7.ru/ ">S7</a></td>
+                            <td>Moscow, Domodedovo</td>
+                            <td>Abakan</td>
+                            <td>22:05</td>
+                            <td>06:35 (arrives the next day)</td>
+                            <td>4h30m</td>
+                            <td>S7 123</td>
+                            <td>Boeing 737-800 Passenger</td>
+                            <td>from 167 EUR</td>
+                        </tr>
+                        <tr class="warning">
+                            <td><a href="http://www.aeroflot.ru/cms/en">Aeroflot</a></td>
+                            <td>Moscow, Sheremetyevo</td>
+                            <td>Abakan</td>
+                            <td>23:40</td>
+                            <td>08:10 (arrives the next day)</td>
+                            <td>4h30m</td>
+                            <td>SU 1478</td>
+                            <td>Aerobus 319, 320</td>
+                            <td>from 182 EUR</td>
+                        </tr>
+                        <tr class="success">
+                            <td><a href="http://www.s7.ru/ ">S7</a></td>
+                            <td>Abakan</td>
+                            <td>Moscow, Domodedovo</td>
+                            <td>07:40</td>
+                            <td>08:40</td>
+                            <td>5h</td>
+                            <td>S7 124</td>
+                            <td>Boeing 737-800 Passenger</td>
+                            <td>from 167 EUR</td>
+                        </tr>
+                        <tr class="warning">
+                            <td><a href="http://www.aeroflot.ru/cms/en">Aeroflot</a></td>
+                            <td>Abakan</td>
+                            <td>Moscow, Sheremetyevo</td>
+                            <td>09:30</td>
+                            <td>10:20</td>
+                            <td>4h50m</td>
+                            <td>SU 1479</td>
+                            <td>Aerobus 319, 320</td>
+                            <td>from 182 EUR</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--                    </div>-->
+                <!-- /table -->
+                <p>
+                    On the <b>1st August</b> organizers will meet all participants at the airport and take them to the Khakass Technical Institute, where they will be provided lunch and a small tour of the Abakan city. Then all participants will be transported by comfortable buses to the venue of the school in Cheremushki. The road will take 1.5 hours through the Khakass steppes and along the Yenisei River. After the completion of the school, all participants will be transported to the airport in Abakan.
+                </p>
+
                 <h4>Weather in Cheremushki in August.</h4>
                 <p>
                     The average temperature in August is 16.4°C. The mean daily maximum 22.4°C and mean daily minimum 11.4°C. In August in Cheremushki receives of 82.2 mm rainfall. The weather in the mountains is unpredictable and heavy rains are possible. There are a lot of slippery rocks so you can bring trekking boots.
@@ -124,23 +212,24 @@
                 <p>
                     August is the ending of the mosquito and tick season, it is better to be prepared and to take some repellent with you.
                 </p>
-            </div>
-            <p>&nbsp;</p>
-            <div class="col-1-1">
-                <img src="/static/img/climatogram.jpg" width="875">
-            </div>
-            <p>&nbsp;</p>
-            <div class="col-1-2">
-                <h2>Shushensky Bor National<br> Park</h2>
-                <p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122472.31317450057!2d91.4409294070108!3d52.82195634859813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDUwJzA2LjgiTiA5McKwMjUnMDAuNiJF!5e0!3m2!1sen!2s!4v1456912252575" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </p>
-            </div>
-            <div class="col-1-2">
-                <h2>Siberian Federal <br>University</h2>
-                <p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2230.8064224458585!2d92.76453675155567!3d56.004705680526364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5cd7ad791d3c8e2f%3A0x47190ac12ce81e32!2z0KHQuNCx0LjRgNGB0LrQuNC5INGE0LXQtNC10YDQsNC70YzQvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2s!4v1455608945456?hl=en-EN" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </p>
+                <!--               </div>-->
+                <p>&nbsp;</p>
+                <div class="col-1-1">
+                    <img src="/static/img/climatogram.jpg" width="875">
+                </div>
+                <p>&nbsp;</p>
+                <div class="col-1-2">
+                    <h2 style="letter-spacing: normal;">Shushensky Bor National<br> Park</h2>
+                    <p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122472.31317450057!2d91.4409294070108!3d52.82195634859813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDUwJzA2LjgiTiA5McKwMjUnMDAuNiJF!5e0!3m2!1sen!2s!4v1456912252575" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </p>
+                </div>
+                <div class="col-1-2">
+                    <h2 style="letter-spacing: normal;">Siberian Federal <br>University</h2>
+                    <p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2230.8064224458585!2d92.76453675155567!3d56.004705680526364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5cd7ad791d3c8e2f%3A0x47190ac12ce81e32!2z0KHQuNCx0LjRgNGB0LrQuNC5INGE0LXQtNC10YDQsNC70YzQvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2s!4v1455608945456?hl=en-EN" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -151,6 +240,9 @@
     </div>
     <!-- all your content here -->
     <div id="scroller" class="b-top" style="display: none;"><span class="b-top-but">scroll </span></div>
+
+    <script defer src="static/js/freenbar.min.js"></script>
+
     <!-- link to scripts here -->
     <script src="/static/js/vendor/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.3/jquery.slicknav.min.js"></script>
@@ -275,5 +367,6 @@
         });
     </script>
 </body>
+
 </html>
 <!-- http://www.dendrospain.es/ -->
