@@ -17,14 +17,18 @@ getStationCode <- function(listFiles) {
     return(as.numeric(listCodes))
 }
 
-alati.path <- "cli/altai"
-altai.files <- list.files(pattern = "\\.txt$", path = alati.path, ignore.case = TRUE, 
+altai.path <- "cli/altai"
+altai.files <- list.files(pattern = "\\.txt$", path = altai.path, ignore.case = TRUE, 
     recursive = FALSE, full.names = FALSE)
-alati.code <- getStationCode(altai.files)
+altai.code <- getStationCode(altai.files)
+#todo
+# altai.names <- getStationNames
 
 lena.path <- "cli/lena"
-lena.files <- list.files(pattern = "\\.txt$", path = lena.path, ignore.case = TRUE)
+lena.files <- list.files(pattern = "\\.txt$", path = lena.path, ignore.case = TRUE, 
+    recursive = FALSE, full.names = FALSE)
 lena.code <- getStationCode(lena.files)
+
 
 north.path <- "cli/north"
 north.files <- list.files(pattern = "\\.txt$", path = north.path, ignore.case = TRUE)
