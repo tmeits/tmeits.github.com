@@ -42,7 +42,7 @@ aisori.path <- "cli/aisori"
 aisori.files <- list.files(pattern = "\\.txt$", path = aisori.path, ignore.case = TRUE)
 aisori.code <- getStationCode(aisori.files)
 
-all.path <- c(alati.path, lena.path, north.path, yenisei.path, aisori.path)
+all.path <- c(altai.path, lena.path, north.path, yenisei.path, aisori.path)
 all.files <- c(altai.files, lena.files, north.files, yenisei.files, aisori.files)
 all.code <- getStationCode(all.files)
 
