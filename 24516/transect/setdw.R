@@ -36,7 +36,7 @@ setWorkDir2 <- function(osVersion) {
         setwd("C:/Users/IVA/Dropbox/24516/nnet_transect/") else stop("mystery...")
     return(getwd())
 }        
-mnet_path <- setWorkDir2(getOsVersion())
+nnet_path <- setWorkDir2(getOsVersion())
         
 # knitr: run all chunks in an Rmarkdown document                              
 runAllChunks <- function(rmd, envir = globalenv()) {
