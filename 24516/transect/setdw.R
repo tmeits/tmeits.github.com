@@ -25,7 +25,19 @@ setWorkDir <- function(osVersion) {
 }
 mm_path <- setWorkDir(getOsVersion())
 mm_path
-
+        
+# Installation of a working directory
+setWorkDir2 <- function(osVersion) {
+    if (osVersion == "build 2600, Service Pack 3") 
+        setwd("Z:/home/larisa/Dropbox/24516/nnet_transect/")
+    else if (osVersion == "#32-Ubuntu SMP Fri Apr 16 08:10:02 UTC 2010")
+        setwd("/home/larisa/Dropbox/24516/nnet_transect/")
+    else if (osVersion == "build 7601, Service Pack 1")
+        setwd("C:/Users/IVA/Dropbox/24516/nnet_transect/") else stop("mystery...")
+    return(getwd())
+}        
+mnet_path <- setWorkDir2(getOsVersion())
+        
 # knitr: run all chunks in an Rmarkdown document                              
 runAllChunks <- function(rmd, envir = globalenv()) {
     tempR <- tempfile(tmpdir = ".", fileext = ".R")
