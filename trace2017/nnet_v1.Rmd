@@ -1,0 +1,58 @@
+---
+title: "Апроксимация нейронной сетью"
+output:
+  html_document: default
+  html_notebook: default
+  word_document: default
+---
+####  Using neural network for create regression model CLIs-CRNs
+  + <https://yandex.ru/maps/-/CZwvQZpz>
+
+```{r init}
+rm(list=ls())
+assign("last.warning", NULL, envir = baseenv())
+#source("http://tmeits.github.io/24516/transect/setdw.R")
+#wd <- "C:/Users/IVA/Dropbox/24516/nnet_transect/nnet_24643"
+#wd <- "Z:/home/larisa/Dropbox/24516/nnet_transect/nnet_24643"
+#setwd(wd)
+```
+
+#### Reading generalized chronologies from the site https://www.ncdc.noaa.gov/paleo/chron_table.html
+  + <https://www.ncdc.noaa.gov/paleo/meas_table.html>
+  + <ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/russ055/russ055w_tabs.crn>
+  + <ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/russ055/russ055w_out.txt>
+  + <https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf>
+```{r read_rwi_data}
+library(reshape2)
+library(data.table)
+# http://meteo.ru/data/155-meteostations
+# 63.23, 125.48   63.95, 124.83  https://yandex.ru/maps/-/CZwvQZpz
+DTw <- fread("ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/russ055/russ055w_tabs.crn")
+DTe <- fread("ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/russ055/russ055e_tabs.crn")
+str(DTw)
+head(DTw)
+DTw[YEAR %in% c(1:5000)]
+length(c(min(DTw[,YEAR]): max(DTw[,YEAR]))) == length(DTw[,YEAR])
+DTw[, .(YEAR,STD)]
+DTw[, plot(YEAR,STD,type="l", col="green")]
+DTw[, lines(YEAR,RES,type="l", col="red")]
+DTw[, lines(YEAR,ARS,type="l", col="blue")]
+```
+####
+  + <http://www.htmlwidgets.org/>
+  + <http://www.htmlwidgets.org/showcase_dygraphs.html>
+  + <http://rstudio.github.io/dygraphs/index.html>
+  + <http://anonym-mouse.livejournal.com/2323.html>
+  
+
+```{r}
+#install.packages("dygraphs")
+library(dygraphs)
+library(datasets)
+
+dt_w <- DTw[1:(1992-DTw[,min(YEAR)]),]
+# http://www.sibran.ru/upload/iblock/407/4078125c856863ff40809cf249876b95.PDF
+crn <- structure(c(dt_w[, RES]), .Tsp = c(dt_w[,min(YEAR)], dt_w[,max(YEAR)], 1), class = "ts")
+dygraph(crn, main = "Russia, Scotch pine 100  63.23-125.48 1568 1991", ylab = "RWI")  %>% dyRangeSelector(dateWindow = c("1650-01-01","2000-01-01"))
+
+```
