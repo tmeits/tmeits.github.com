@@ -11,10 +11,7 @@ output:
 ```{r init}
 rm(list=ls())
 assign("last.warning", NULL, envir = baseenv())
-#source("http://tmeits.github.io/24516/transect/setdw.R")
-#wd <- "C:/Users/IVA/Dropbox/24516/nnet_transect/nnet_24643"
-#wd <- "Z:/home/larisa/Dropbox/24516/nnet_transect/nnet_24643"
-#setwd(wd)
+load("crn_table.RData")
 ```
 
 #### Reading generalized chronologies from the site https://www.ncdc.noaa.gov/paleo/chron_table.html
@@ -38,6 +35,39 @@ DTw[, plot(YEAR,STD,type="l", col="green")]
 DTw[, lines(YEAR,RES,type="l", col="red")]
 DTw[, lines(YEAR,ARS,type="l", col="blue")]
 ```
+#### Читаем все обобщенные хронологии на russ
+```{r read_all_crn}
+str_ex <- "ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/russ055/russ055w_tabs.crn"
+crn_file <- list()
+i <- 1
+num <- 20
+for(num in 20:180){
+  if(num > 99){
+    crn_file[[i]] <- paste0("ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/",
+                   "russ", num, "/russ", num, "w_tabs.crn")
+  } else {
+    crn_file[[i]] <- paste0("ftp://ftp.ncdc.noaa.gov/pub/data/paleo/treering/updates/schweingruber/chronologies/",
+                   "russ0", num, "/russ0", num, "w_tabs.crn")
+  }
+  i <- i + 1
+}
+
+```
+#### Загружаем хронологии в список из data.table
+```{r}
+library(reshape2)
+library(data.table)
+crn_table <- list()
+for(i in 1:(180-20)){
+  if(i == 2  | i == 34 | i == 40 | i == 47 | i == 50) {
+    print("next sites")
+  }
+  else {
+    print(i)
+    crn_table[[i]] <- fread(as.character(crn_file[i]))
+  }
+}
+```
 ####
   + <http://www.htmlwidgets.org/>
   + <http://www.htmlwidgets.org/showcase_dygraphs.html>
@@ -46,6 +76,9 @@ DTw[, lines(YEAR,ARS,type="l", col="blue")]
   
 
 ```{r}
+# Добавить размеры графика
+# считать все серии в список и преобразовать в приложение Shiny
+# с выпадающем списком серий
 #install.packages("dygraphs")
 library(dygraphs)
 library(datasets)
@@ -54,5 +87,18 @@ dt_w <- DTw[1:(1992-DTw[,min(YEAR)]),]
 # http://www.sibran.ru/upload/iblock/407/4078125c856863ff40809cf249876b95.PDF
 crn <- structure(c(dt_w[, RES]), .Tsp = c(dt_w[,min(YEAR)], dt_w[,max(YEAR)], 1), class = "ts")
 dygraph(crn, main = "Russia, Scotch pine 100  63.23-125.48 1568 1991", ylab = "RWI")  %>% dyRangeSelector(dateWindow = c("1650-01-01","2000-01-01"))
+
+```
+###
+```{r links}
+# http://vs-genn.ru/sites_yakutia/. К
+# https://rstudio-pubs-static.s3.amazonaws.com/65323_76ad54e90cd845eab4b7569c81c9d5b0.html
+# http://dkhramov.dp.ua/Comp/ShinyLesson01
+# http://www.academia.edu/9464470/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA%D0%B0_Shiny_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9_%D0%BD%D0%B0_%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5_R
+# https://habrahabr.ru/company/microsoft/blog/316032/https://habrahabr.ru/post/253419/
+  
+  
+  
+
 
 ```
