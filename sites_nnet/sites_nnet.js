@@ -1,12 +1,14 @@
-// @author: iljin.victor@gmail.com
+// @author: tmeits@gmail.com
 ymaps.ready(init);
 
 function init () {
     var myMap = new ymaps.Map("map", {
-            center: [63.09755, 123.1414],
-            zoom: 5,
+            // Выбор центра карты
+            center: [63.42, 92.27],
+            zoom: 3,
+            type: 'yandex#hybrid', 
             //type: 'yandex#satellite',
-            type: 'yandex#map',
+            //type: 'yandex#map',
             //controls: ['smallMapDefaultSet']
             controls: [
                 'zoomControl', 
@@ -28,19 +30,38 @@ function init () {
             // Описание геометрии.
             geometry: {
                 type: "Point",
-                coordinates: [62.09755, 130.1414]
+                coordinates: [69.0843, 75.9155]
             },
             // Свойства.
             properties: {
+                balloonContent: '<b>ITRDB-Code: RUSS011 </b><hr>\
+                    Study site: FOREST-TUNDRA ZONE MANGAZEYA SWAMPY SITE <br> \
+                    Species: LASI<br>\
+                    Investigator: SHIYATOV, S.G.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:4762,17077">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ011.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ011.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ011_nnet.html">Chronology (train and test)</a></li></ul>',
                 // Контент метки.
-                //iconContent: 'Я тащусь',
-                iconContent: '1',
-                hintContent: '<a href="LB/">Altitude (m) 113<br>62.09755, 130.1414</a>'
+                iconContent: 'ITRDB-Code: RUSS011',
+                hintContent: '<b>ITRDB-Code: RUSS011 </b><hr>\
+                    Study site: FOREST-TUNDRA ZONE MANGAZEYA SWAMPY SITE <br> \
+                    Species: LASI<br>\
+                    Investigator: SHIYATOV, S.G.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:4762,17077">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ011.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ011.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ011_nnet.html">Chronology (train and test)</a></li></ul>'
             }
         }, {
             // Опции.
             // Иконка метки будет растягиваться под размер ее содержимого.
-            preset: 'islands#blackStretchyIcon',
+            // preset: 'islands#blackStretchyIcon',
+            preset: 'islands#redStretchyIcon',
             // Метку можно перемещать.
             //draggable: true
             // Запретим перемещать метку.
@@ -49,40 +70,108 @@ function init () {
 
     myMap.geoObjects
         .add(myGeoObject)
-        .add(new ymaps.Placemark([62.15643333, 130.4926333], {
-            balloonContent: '', //'<img src="http://g02.a.alicdn.com/kf/HTB15Eo.JXXXXXcfXVXXq6xXFXXXl/Haok-Home-PVC-Vinyl-Vintage-Faux-Woods-Panel-Tree-3D-Wallpaper-Living-room-Bedroom-Home-Wall.jpg_120x120.jpg"><br><a href="P2_04.08/">Altitude (m) 231<br>62.09755, 130.1414</a>',
-            iconContent: '2',
-            hintContent: '<a href="P2_04.08/">Altitude (m) 231<br>62.15643333, 130.4926333</a>'
+        .add(new ymaps.Placemark([54.1669, 90.8566], {
+            balloonContent: '<b>ITRDB-Code: RUSS215 </b><hr>\
+                    Study site: BOGRAD <br> \
+                    Species: LAGM<br>\
+                    Investigator:JACOBY, G.C.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:12689,52844">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ215.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ215.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ215_nnet.html">Chronology (train and test)</a></li></ul>', //'<img src="http://g02.a.alicdn.com/kf/HTB15Eo.JXXXXXcfXVXXq6xXFXXXl/Haok-Home-PVC-Vinyl-Vintage-Faux-Woods-Panel-Tree-3D-Wallpaper-Living-room-Bedroom-Home-Wall.jpg_120x120.jpg"><br><a href="P2_04.08/">Altitude (m) 231<br>62.09755, 130.1414</a>',
+            iconContent: 'ITRDB-Code: RUSS215',
+            hintContent: '<b>ITRDB-Code: RUSS215 </b><hr>\
+                    Study site: BOGRAD <br> \
+                    Species: LAGM<br>\
+                    Investigator:JACOBY, G.C.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:12689,52844">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ215.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ215.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ215_nnet.html">Chronology (train and test)</a></li></ul>'
         }, {
-            preset: 'islands#icon',
-            iconColor: '#0095b6'
+            preset: 'islands#redStretchyIcon'
         }))
-        .add(new ymaps.Placemark([62.14685, 130.5214667], {
-            balloonContent: '62.14685, 130.5214667',
-            iconContent: '3',
-            hintContent: '<a href="L1_04.08/">Altitude (m) 206<br>62.14685, 130.5214667</a>'
+        .add(new ymaps.Placemark([71.2302, 104.7437], {
+            balloonContent: '<b>ITRDB-Code: RUSS019</b><hr>\
+                    Study site: LUKUNSKA RIVER <br> \
+                    Species: LAGM<br>\
+                    Investigator:JACOBY, G.C.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:3602,16028">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ019.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ019.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ019_nnet.html">Chronology (train and test)</a></li></ul>',
+            iconContent: 'ITRDB-Code: RUSS019',
+            hintContent: '<b>ITRDB-Code: RUSS019</b><hr>\
+                    Study site: LUKUNSKA RIVER <br> \
+                    Species: LAGM<br>\
+                    Investigator:JACOBY, G.C.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:3602,16028">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ019.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ019.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ019_nnet.html">Chronology (train and test)</a></li></ul>'
         }, {
             //preset: 'islands#dotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
+            preset: 'islands#redStretchyIcon'
         }))
-        .add(new ymaps.Placemark([61.94788333, 132.1412333], {
-            balloonContent: '61.94788333, 132.1412333',
-            iconContent: '4',
-            hintContent: '<a href="L2_24.07/">Altitude (m) 210<br>61.94788333, 132.1412333</a>'
+        .add(new ymaps.Placemark([67.3338, 124.4312], {
+            balloonContent: '<b>ITRDB-Code: RUSS193</b><hr>\
+                    Study site:  LOWER LENA <br> \
+                    Species: LADE<br>\
+                    Investigator:MACDONALD, G.M.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:3902,16296">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ193.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ193.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ193_nnet.html">Chronology (train and test)</a></li></ul>',
+            iconContent: 'ITRDB-Code: RUSS193',
+            hintContent: '<b>ITRDB-Code: RUSS193</b><hr>\
+                    Study site:  LOWER LENA <br> \
+                    Species: LADE<br>\
+                    Investigator:MACDONALD, G.M.<hr>\
+                    <ul>\
+                    <li><a href="http://hurricane.ncdc.noaa.gov/pls/paleox/f?P=519:1:::::P1_STUDY_ID,P1_SITE_ID:3902,16296">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ193.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ193.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ193_nnet.html">Chronology (train and test)</a></li></ul>'
         }, {
-            preset: 'islands#icon',
-            //preset: 'islands#circleIcon',
-            iconColor: '#3caa3c'
+            preset: 'islands#redStretchyIcon'
+           
         }))
-        .add(new ymaps.Placemark([62.32351667, 133.5322333], {
-            balloonContent: '62.32351667, 133.5322333',
-            iconContent: '5',
-            hintContent: '<a href="L3_03.08/">Altitude (m) 245<br>62.32351667, 133.5322333</a>'
+        .add(new ymaps.Placemark([66.1427, 163.1030], {
+            balloonContent: '<b>ITRDB-Code: RUSS198</b><hr>\
+                    Study site:  RODENKA HILL <br> \
+                    Species: LAGM<br>\
+                    Investigator:BUNN, A.<hr>\
+                    <ul>\
+                    <li><a href="https://www.ncdc.noaa.gov/paleo/study/9929">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ198.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ198.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ198_nnet.html">Chronology (train and test)</a></li></ul>',
+            iconContent: 'ITRDB-Code: RUSS198',
+            hintContent: '<b>ITRDB-Code: RUSS198</b><hr>\
+                    Study site:  RODENKA HILL <br> \
+                    Species: LAGM<br>\
+                    Investigator:BUNN, A.<hr>\
+                    <ul>\
+                    <li><a href="https://www.ncdc.noaa.gov/paleo/study/9929">\
+                    Original data from ITRDB</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/tree/russ198.csv">Chronology (CSV)</a></li><br>\
+                    <li><a href="http://dendrobox.org/data/clim/russ198.csv">Climate average (CSV)</a></li><br>\
+                    <li><a href="http://vs-genn.ru/sites_nnet/russ198_nnet.html">Chronology (train and test)</a></li></ul>'
         }, {
-            preset: 'islands#icon',
-            //preset: 'islands#circleDotIcon',
-            iconColor: 'yellow'
+            preset: 'islands#redStretchyIcon'
+           
         }))
         .add(new ymaps.Placemark([62.08993333, 134.40405], {
             balloonContent: '62.08993333, 134.40405',
@@ -119,289 +208,7 @@ function init () {
             preset: 'islands#icon',
             iconColor: '#1faee9'
         }))
-        .add(new ymaps.Placemark([63.04238333, 137.9671167], {
-            balloonContent: '',
-            iconContent: '10 ',
-            hintContent: '<a href="L5_01.08/">Altitude (m) 465<br>63.04238333, 137.9671167 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([63.11411667, 139.0809], {
-            balloonContent: '',
-            iconContent: '11',
-            hintContent: '<a href="L6_26.07/">Altitude (m) 878<br>63.11411667, 139.0809 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#1faee9'
-        }))
-        .add(new ymaps.Placemark([63.2132, 139.5059833], {
-            balloonContent: '',
-            iconContent: '12',
-            hintContent: '<a href="L7_31.07/">Altitude (m) 1327<br>63.2132, 139.5059833 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#1faee9'
-        }))
-        .add(new ymaps.Placemark([63.5372, 140.7388167], {
-            balloonContent: '',
-            iconContent: '13',
-            hintContent: '<a href="L8_26.07/">Altitude (m) 1119<br>63.5372, 140.7388167 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#1faee9'
-        }))
-        .add(new ymaps.Placemark([64.0545, 141.06275], {
-            balloonContent: '',
-            iconContent: '14',
-            hintContent: '<a href="L9_30.07/">Altitude (m) 783<br>64.0545, 141.06275 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#1faee9'
-        }))
-        .add(new ymaps.Placemark([64.43836667, 141.9257667], {
-            balloonContent: '',
-            iconContent: '15',
-            hintContent: '<a href="L10_30.07/">Altitude (m) 617<br>64.43836667, 141.9257667</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([64.61056667, 142.5445667], {
-            balloonContent: '',
-            iconContent: '16',
-            hintContent: '<a href="L11_30.07/">Altitude (m) 1164<br>64.61056667, 142.5445667 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([64.43143333, 144.04705], {
-            balloonContent: '',
-            iconContent: '17',
-            hintContent: '<a href="L12_27.07/">Altitude (m) 626<br>64.43143333, 144.04705 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([63.84951667, 145.5568667], {
-            balloonContent: '',
-            iconContent: '18',
-            hintContent: '<a href="L13_27.07/">Altitude (m) 833<br>63.84951667, 145.5568667 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([63.53016667, 146.42375], {
-            balloonContent: '',
-            iconContent: '19',
-            hintContent: '<a href="L14_29.07/">Altitude (m) 1026<br>63.53016667, 146.42375 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([62.8873, 147.2628667], {
-            balloonContent: '',
-            iconContent: '20',
-            hintContent: '<a href="L15_28.07/">Altitude (m) 866<br>62.8873, 147.2628667 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([62.40205, 149.8439167], {
-            balloonContent: '',
-            iconContent: '21',
-            hintContent: '<a href="L16_29.07/">Altitude (m) 457<br>62.40205, 149.8439167</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([62.981, 108.394], {
-            balloonContent: '',
-            iconContent: '22',
-            hintContent: '<a href="LB/">62.981, 108.394 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([64.607, 99.895], {
-            balloonContent: '',
-            iconContent: '23',
-            hintContent: '<a href="LB/">64.607, 99.895 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([64.107, 99.98], {
-            balloonContent: '',
-            iconContent: '24',
-            hintContent: '<a href="LB/">64.107, 99.98 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([63.912, 97.776], {
-            balloonContent: '',
-            iconContent: '25',
-            hintContent: '<a href="LB/">63.912, 97.776 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        .add(new ymaps.Placemark([63.756, 98.11], {
-            balloonContent: '',
-            iconContent: '26',
-            hintContent: '<a href="LB/">63.756, 98.11 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3caa3c'
-        }))
-        // Margarita Popkova - New sites 7.12.15 
-        .add(new ymaps.Placemark([62.23, 127.22], {
-            balloonContent: '',
-            iconContent: '27',
-            hintContent: '<a href="LB/">62.23, 127.22 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.88, 124.23], {
-            balloonContent: '',
-            iconContent: '28',
-            hintContent: '<a href="LB/">62.88, 124.23 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([63.60, 121.23], {
-            balloonContent: '',
-            iconContent: '29',
-            hintContent: '<a href="LB/">63.60, 121.23 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([63.57, 119.70], {
-            balloonContent: '',
-            iconContent: '30',
-            hintContent: '<a href="LB/">63.57, 119.70 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([63.32, 118.09], {
-            balloonContent: '',
-            iconContent: '31',
-            hintContent: '<a href="LB/">63.32, 118.09</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.97, 117.88], {
-            balloonContent: '',
-            iconContent: '32',
-            hintContent: '<a href="LB/">62.97, 117.88 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.50, 113.92 ], {
-            balloonContent: '',
-            iconContent: '33',
-            hintContent: '<a href="LB/">Мирный<br>62.50, 113.92 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([65.92, 111.39], {
-            balloonContent: '',
-            iconContent: '34',
-            hintContent: '<a href="LB/">65.92, 111.39 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.25, 129.62], {
-            balloonContent: '',
-            iconContent: '35',
-            hintContent: '<a href="LB/">Altitude (m) 217<br>62.25, 129.62</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.25, 129.63], {
-            balloonContent: '',
-            iconContent: '36',
-            hintContent: '<a href="LB/">Altitude (m) 318<br> 62.25, 129.63</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.02, 128.77], {
-            balloonContent: '',
-            iconContent: '37',
-            hintContent: '<a href="LB/">Altitude (m) 254<br>62.02, 128.77 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([62.03, 128.66 ], {
-            balloonContent: '',
-            iconContent: '38',
-            hintContent: '<a href="LB/">Altitude (m) 213<br>62.03, 128.66 </a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#735184'
-        }))
-        //
-        .add(new ymaps.Placemark([64.28, 100.22 ], {
-            balloonContent: '<img src="http://vs-genn.ru/sites_yakutia/thumbnail/pinus.jpg"><br><a href="LB/">Altitude (m) NaN<br>64.28, 100.22</a>',
-            iconContent: '39',
-            hintContent: '<a href="LB/">Altitude (m) NaN<br>64.28, 100.22</a>'
-        }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#a5260a'
-        }))
+        
         //
         .add(new ymaps.Placemark([60.892940, 89.35 ], {
             balloonContent: 'Russian Federation, Krasnoyarskiy kray, Turukhanskiy rayon, selo Zotino',
@@ -409,8 +216,7 @@ function init () {
             hintContent: 'Russian Federation, Krasnoyarskiy kray, Turukhanskiy rayon, selo Zotino'
         }, {
             //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#a5260a'
+            preset: 'islands#greenStretchyIcon'
         }))
 
 	;
