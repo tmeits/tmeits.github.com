@@ -1,0 +1,61 @@
+---
+title: "Апроксимация нейронной сетью"
+output:
+  html_document: default
+  html_notebook: default
+---
+#### Участок с результатами нейросетевого моделирования ITRDB-Code: RUSS019
+  + <http://vs-genn.ru/sites_nnet/>
+
+```{r init}
+rm(list=ls())
+assign("last.warning", NULL, envir = baseenv())
+#load("crn_table.RData")
+```
+#### Reading generalized chronologies from the site 
+  + <http://vs-genn.ru/sites_nnet/data/tree/russ019.csv>
+```{r read_rwi_data}
+library(reshape2)
+library(data.table)
+DTw <- fread("http://vs-genn.ru/sites_nnet/data/tree/russ019.csv")
+str(DTw)
+DTw[year %in% c(1:5000)]
+summary(DTw)
+#DTw[, plot(year, rwi,type="l", col="blue")]
+```
+
+#### R interface to the dygraphs JavaScript charting library
+  + <http://rstudio.github.io/dygraphs/index.html>
+  + <http://anonym-mouse.livejournal.com/2323.html>
+```{r dygraphs}
+#install.packages("dygraphs")
+library(dygraphs)
+library(datasets)
+
+dt_w <- DTw[1:(1992-DTw[,min(year)]),]
+# http://www.sibran.ru/upload/iblock/407/4078125c856863ff40809cf249876b95.PDF
+crn <- structure(c(dt_w[, rwi]), .Tsp = c(dt_w[,min(year)], dt_w[,max(year)], 1), class = "ts")
+dygraph(crn, main = "Study site: LUKUNSKA RIVER, Species: LAGM, Investigator:JACOBY, G.C.", ylab = "RWI")  %>% dyRangeSelector()
+```
+
+#### Ошибка обобщения нейронной сети
+
+Ошибка, с которой обученная нейросетевая модель решает задачи независимой тестовой выборки для участка
+  + Загружаем предварительно обученную нейромодель
+  + 
+```{r nnet}
+#
+nnet_crn <- 
+dt_w <- DTw[356:(1992-DTw[,min(year)]), ]
+crn <- structure(c(dt_w[, rwi]), .Tsp = c(dt_w[,min(year)], dt_w[,max(year)], 1), class = "ts")
+dygraph(crn, ylab = "RWI") 
+```
+
+***
+#### Copyright © 2016, Prof. Vlad Shishov. All rights reserved.
+```{r links}
+# http://www.neuropro.ru/memo12.shtml
+# https://habrahabr.ru/company/smartengines/blog/264677/
+# http://statlab.kubsu.ru/sites/project_bank/nural.pdf
+# http://www.ivdon.ru/magazine/archive/n2y2013/1597
+```
