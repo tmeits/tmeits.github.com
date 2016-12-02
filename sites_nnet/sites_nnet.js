@@ -173,50 +173,88 @@ function init () {
             preset: 'islands#redStretchyIcon'
            
         }))
-        .add(new ymaps.Placemark([62.08993333, 134.40405], {
+        .add(new ymaps.Placemark([60.78993333, 121.40405], {
             balloonContent: '62.08993333, 134.40405',
-            iconContent: '6',
-            hintContent: '<a href="P3_03.08/">Altitude (m) 191<br>62.08993333, 134.40405</a>'
+            iconContent: '1',
+            hintContent: '<a href="http://vs-genn.ru/sites_nnet/t1.html">Altitude (m) 191<br>62.08993333, 134.40405</a>'
         }, {
-            preset: 'islands#icon',
-            iconColor: '#a5260a'
+            preset: 'islands#greenStretchyIcon'
         }))
-        .add(new ymaps.Placemark([ 62.74548333, 136.4161667], {
+        .add(new ymaps.Placemark([62.34548333, 127.4161667], {
             balloonContent: '62.74548333, 136.4161667',
-            iconContent: '7',
-            hintContent: '<a href="P4_01.08/"> Altitude (m) 245<br>62.74548333, 136.4161667</a>'
+            iconContent: '2',
+            hintContent: '<a href="http://vs-genn.ru/sites_nnet/t2.html"> Altitude (m) 245<br>62.74548333, 136.4161667</a>'
         }, {
-            //preset: 'islands#dotIcon',
-            preset: 'islands#icon',
-            iconColor: '#3b5998'
+            preset: 'islands#greenStretchyIcon'
         }))
-        .add(new ymaps.Placemark([62.93555, 137.3251], {
+        .add(new ymaps.Placemark([61.93555, 132.3251], {
             balloonContent: '62.93555, 137.3251',
-            iconContent: '8',
-            hintContent: '<a href="L4_01.08/"> Altitude (m) 429<br>62.93555, 137.3251 </a>'
+            iconContent: '3',
+            hintContent: '<a href="http://vs-genn.ru/sites_nnet/t3.html"> Altitude (m) 429<br>62.93555, 137.3251 </a>'
         }, {
-            //preset: 'islands#circleIcon',
-            preset: 'islands#icon',
-            iconColor: '#4d7198'
+            preset: 'islands#greenStretchyIcon'
         }))
         .add(new ymaps.Placemark([63.04311667, 137.9554667], {
             balloonContent: '63.04311667, 137.9554667',
-            iconContent: '9',
-            hintContent: '<a href="LB/">Altitude (m) 505<br>63.04311667, 137.9554667 </a>'
+            iconContent: '4',
+            hintContent: '<a href="http://vs-genn.ru/sites_nnet/t4.html">Altitude (m) 505<br>63.04311667, 137.9554667 </a>'
         }, {
-            //preset: 'islands#circleDotIcon',
-            preset: 'islands#icon',
-            iconColor: '#1faee9'
+            preset: 'islands#greenStretchyIcon'
         }))
         
         //
-        .add(new ymaps.Placemark([60.892940, 89.35 ], {
+        .add(new ymaps.Placemark([60.89, 89.35], {
             balloonContent: 'Russian Federation, Krasnoyarskiy kray, Turukhanskiy rayon, selo Zotino',
-            iconContent: '40',
+            iconContent: 'Zotino',
             hintContent: 'Russian Federation, Krasnoyarskiy kray, Turukhanskiy rayon, selo Zotino'
         }, {
             //preset: 'islands#circleDotIcon',
             preset: 'islands#greenStretchyIcon'
+        }))
+
+        // Расчитанные обобщенные хронологии
+        .add(new ymaps.Placemark([62.89, 97.35], {
+            balloonContent: '62.89, 97.35 <hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet01.png" height = 94>',
+            iconContent: 'NNET01',
+            hintContent: '62.89, 97.35 <hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet01.png" height = 94>'
+        }, {
+            //preset: 'islands#circleDotIcon',
+            preset: 'islands#blueStretchyIcon'
+        }))
+        //
+        .add(new ymaps.Placemark([61.89, 109.35], {
+            balloonContent: '61.89, 109.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet02.png" height = 94>',
+            iconContent: 'NNET02',
+            hintContent: '61.89, 109.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet02.png" height = 94>'
+        }, {
+            //preset: 'islands#circleDotIcon',
+            preset: 'islands#blueStretchyIcon'
+        }))
+        //
+        .add(new ymaps.Placemark([55.89, 129.35], {
+            balloonContent: '55.89, 129.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet03.png" height = 94>',
+            iconContent: 'NNET03',
+            hintContent: '55.89, 129.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet03.png" height = 94>'
+        }, {
+            //preset: 'islands#circleDotIcon',
+            preset: 'islands#blueStretchyIcon'
+        }))
+        //
+        .add(new ymaps.Placemark([60.89, 152.35], {
+            balloonContent: '60.89, 152.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet04.png" height = 94>',
+            iconContent: 'NNET04',
+            hintContent: '60.89, 152.35<hr>\
+            <img src="http://vs-genn.ru/sites_nnet/data/tree/nnet04.png" height = 94>'
+        }, {
+            //preset: 'islands#circleDotIcon',
+            preset: 'islands#blueStretchyIcon'
         }))
 
 	;
