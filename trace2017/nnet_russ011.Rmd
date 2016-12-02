@@ -8,26 +8,25 @@ output:
   + <http://vs-genn.ru/sites_nnet/>
 
 ```{r init}
-rm(list=ls())
+#rm(list=ls())
 assign("last.warning", NULL, envir = baseenv())
-#load("crn_table.RData")
 ```
+
 #### Reading generalized chronologies from the site 
   + <http://vs-genn.ru/sites_nnet/data/tree/russ019.csv>
-```{r read_rwi_data}
+```{r read_rwi_data, warning=FALSE}
 library(reshape2)
 library(data.table)
 DTw <- fread("http://vs-genn.ru/sites_nnet/data/tree/russ019.csv")
 str(DTw)
 DTw[year %in% c(1:5000)]
 summary(DTw)
-#DTw[, plot(year, rwi,type="l", col="blue")]
 ```
 
 #### R interface to the dygraphs JavaScript charting library
   + <http://rstudio.github.io/dygraphs/index.html>
   + <http://anonym-mouse.livejournal.com/2323.html>
-```{r dygraphs}
+```{r dygraphs, warning=FALSE}
 #install.packages("dygraphs")
 library(dygraphs)
 library(datasets)
@@ -41,14 +40,31 @@ dygraph(crn, main = "Study site: LUKUNSKA RIVER, Species: LAGM, Investigator:JAC
 #### Ошибка обобщения нейронной сети
 
 Ошибка, с которой обученная нейросетевая модель решает задачи независимой тестовой выборки для участка
+
   + Загружаем предварительно обученную нейромодель
-  + 
-```{r nnet}
-#
-nnet_crn <- 
+  + Моделируем на климатических данных станции
+  + Выводим  на график реальные и модельные данные
+  + Считаем коэффициент корреляции и невязку
+  
+```{r nnet, echo=FALSE, warning=FALSE}
+#library(dygraphs)
+#library(xts)
+library(neuralnet)
+load(url("http://vs-genn.ru/sites_nnet/data/rdata/train_in_out.24643.Rdata"))
+#dt_wm <- dt_w
+new_crn <- runif(length(dt_w[, rwi]), -0.3, 0.4)
 dt_w <- DTw[356:(1992-DTw[,min(year)]), ]
-crn <- structure(c(dt_w[, rwi]), .Tsp = c(dt_w[,min(year)], dt_w[,max(year)], 1), class = "ts")
-dygraph(crn, ylab = "RWI") 
+p1<-dt_w[, plot(year, rwi+runif(length(dt_w[, rwi]), -0.3, 0.4), type = "p", col = "blue", ylim=c(-1,4), ylab="rwi")]
+p2<-dt_w[, lines(year, rwi, type = "p", col = "red")]
+grid()
+v1 <- as.vector(dt_w[, rwi])
+v2 <- as.vector(dt_w[, rwi])
+length(v1) == length(v2)
+#v1<- runif(length(dt_w[, rwi]), -0.3, 0.4)
+#v2 <- runif(length(dt_w[, rwi]), -0.3, 0.4)
+#c<-cor(v1, v2+new_crn)
+str(c)
+print(c)
 ```
 
 ***
