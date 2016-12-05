@@ -34,7 +34,7 @@ library(datasets)
 dt_w <- DTw[1:(1992-DTw[,min(year)]),]
 # http://www.sibran.ru/upload/iblock/407/4078125c856863ff40809cf249876b95.PDF
 crn <- structure(c(dt_w[, rwi]), .Tsp = c(dt_w[,min(year)], dt_w[,max(year)], 1), class = "ts")
-dygraph(crn, main = "Study site: LUKUNSKA RIVER, Species: LAGM, Investigator:JACOBY, G.C.", ylab = "RWI")  %>% dyRangeSelector()
+dygraph(crn, main = "Site:LUKUNSKA RIVER, Species:LAGM, Investigator:JACOBY", ylab = "RWI")  %>% dyRangeSelector()
 ```
 
 #### Ошибка обобщения нейронной сети
@@ -51,26 +51,32 @@ dygraph(crn, main = "Study site: LUKUNSKA RIVER, Species: LAGM, Investigator:JAC
 #library(xts)
 library(neuralnet)
 load(url("http://vs-genn.ru/sites_nnet/data/rdata/train_in_out.24643.Rdata"))
-#dt_wm <- dt_w
-new_crn <- runif(length(dt_w[, rwi]), -0.3, 0.4)
-dt_w <- DTw[356:(1992-DTw[,min(year)]), ]
-p1<-dt_w[, plot(year, rwi+runif(length(dt_w[, rwi]), -0.3, 0.4), type = "p", col = "blue", ylim=c(-1,4), ylab="rwi")]
-p2<-dt_w[, lines(year, rwi, type = "p", col = "red")]
+myrunif <- function(x){
+  return(x+runif(1, -0.43, 0.34))
+}
+dt_w <- DTw[356:(1992 - DTw[, min(year)]), ]
+rwi_mod <- sapply(dt_w[, rwi], myrunif)
+rwi_src <- dt_w[, rwi]
+c <- cor.test(rwi_src, rwi_mod)
+
+plot_year <- dt_w[, year]
+plot_rwi <- dt_w[, rwi]
+plot(dt_w[, year], dt_w[, rwi], main = paste0("R = ", round(c$estimate, 4),", p.value = ", c$p.value), type = "p", col = "darkblue", ylim=c(-0.5, 3.5), ylab="rwi", xlab = "year", pch = 22)
 grid()
-v1 <- as.vector(dt_w[, rwi])
-v2 <- as.vector(dt_w[, rwi])
-length(v1) == length(v2)
-#v1<- runif(length(dt_w[, rwi]), -0.3, 0.4)
-#v2 <- runif(length(dt_w[, rwi]), -0.3, 0.4)
-#c<-cor(v1, v2+new_crn)
+lines(dt_w[, year], dt_w[, rwi], type = "p", col = "darkblue", pch = 22)
+lines(plot_year, rwi_mod, type = "p", col = "darkred", pch = 20)
+legend(x="topleft", c("rwi_mod", "rwi_src"), pch=c(20, 22), 
+       cex=.8, col=c("darkred", "darkblue"))
+
 str(c)
 print(c)
 ```
 
 ***
 #### Copyright © 2016, Prof. Vlad Shishov. All rights reserved.
-```{r links}
+```{r links, echo=FALSE, warning=FALSE, eval=FALSE}
 # http://www.neuropro.ru/memo12.shtml
+# http://www.dissercat.com/content/izvlechenie-znanii-iz-tablits-dannykh-pri-pomoshchi-obuchaemykh-i-uproshchaemykh-iskusstvenn
 # https://habrahabr.ru/company/smartengines/blog/264677/
 # http://statlab.kubsu.ru/sites/project_bank/nural.pdf
 # http://www.ivdon.ru/magazine/archive/n2y2013/1597
