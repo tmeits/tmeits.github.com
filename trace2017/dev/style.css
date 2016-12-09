@@ -235,7 +235,8 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 	height: 32px;
 }
 .menu-strip {
-	background: #070808;
+	/*background: #070808;*/
+    background: #652020;
 	margin: 1em 0;
 	padding: 1em 0em 0.8em 0px;
 }
