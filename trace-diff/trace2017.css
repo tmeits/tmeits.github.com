@@ -1,0 +1,67 @@
+/*--
+TRACE2017.css
+--*/
+.auto-style2 {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .auto-style3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .auto-style5 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000000;
+    }
+    .auto-style6 {
+        color: #000000;
+    }
+    .auto-style7 {
+        margin-top: 13px;
+        margin-bottom: 13px;
+    }
+    .auto-style8 {
+        margin: 5px;
+    }
+    .main-paragraph2 {
+        padding: 10px;
+        height: 150px;
+        position: relative;
+        background: #e8e8e8;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000000;
+        /*border: 3px dashed #645a4e;*/
+    }
+    .main-paragraph1 {
+/*        position: absolute; */
+        position: relative;
+        width: 550px;
+        top: 10px; 
+        left: 40px;
+        padding: 10px;
+        background: #ffff; 
+/*        border: 3px dashed #312a22;  */
+/*        border: 3px dashed #645a4e;*/
+    }
+.main-paragraph2 {
+    padding: 10px;
+    height: 150px;
+    position: relative;
+    background: #e8e8e8;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    /*border: 3px dashed #645a4e;*/
+}
+.main-ulist {
+/*        position: absolute; */
+    position: relative;
+    width: 450px;
+    top: 10px; 
+    left: 40px;
+    padding: 10px;
+    background: #ffff; 
+/*        border: 3px dashed #312a22;  */
+/*        border: 3px dashed #645a4e;*/
+}
