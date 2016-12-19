@@ -1,6 +1,6 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
+﻿/*--
+Author:
+Author URL: 
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
@@ -18,8 +18,8 @@ body{
 	padding:0;
 	margin:0;
 	font-family:Arial, Helvetica, sans-serif;
-	background:url('../images/body-bg.jpg') no-repeat 0px 0px;
-	background-size: 100% 100%;
+	/*----background:url('../images/body-bg.jpg') no-repeat 0px 0px;
+	background-size: 100% 100%;----*/
 }
 body a{
     transition:0.5s all;
@@ -28,7 +28,7 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-input[type="button"],input[type="submit"]{
+input[type=button], input[type=submit]{
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -55,7 +55,8 @@ label{
 	margin:5em 0;
 }
 .header-left {
-	float:left;
+	margin: 1pt;
+	float: left;
 }
 .social-icons {
 	float: right;
@@ -115,19 +116,20 @@ i.rss {
 	background-position:-60px 0px;
 }
 .top-menu {
-	float:left;
-	margin-top:0.65em;
+	float: inherit;
+	margin-top: 0.65em;
 }
 .top-menu ul li {
-	display:inline-block;
-	  margin: 0 0.6em;
+	display: inline-block;
+	margin: 0 0.6em;
+	color: #000000;
 }
 
 .btn {padding:10px 20px; background: #F4F4F2;}
 .btn_red {background:#DBDBDB; color: #FFF;}
 
 .top-menu ul li a {
-	color:#cf0000;
+	color: #652020;
 	text-decoration:none;
 	font-size:0.95em;
 	font-weight:600;
@@ -191,9 +193,9 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 /* User Login Form */
 .user_login {display: none;}
 .user_login label {display: block; margin-bottom:5px;}
-.user_login input[type="text"], .user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_login input[type="checkbox"] {float:left; margin-right:5px;}
-.user_login input[type="checkbox"]+label {float:left;}
+.user_login input[type=text], .user_login input[type=email], .user_login input[type=password] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_login input[type=checkbox] {float:left; margin-right:5px;}
+.user_login input[type=checkbox] + label {float:left;}
 
 .user_login .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
 .forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
@@ -201,9 +203,9 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 /* User Register Form */
 .user_register {display: none;}
 .user_register label {display: block; margin-bottom:5px;}
-.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_register input[type="checkbox"] {float:left; margin-right:5px;}
-.user_register input[type="checkbox"]+label {float:left;}
+.user_register input[type=text], .user_register input[type=email], .user_register input[type=password] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register input[type=checkbox] {float:left; margin-right:5px;}
+.user_register input[type=checkbox] + label {float:left;}
 
 .user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
 /*--start-search--*/
@@ -215,7 +217,7 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 	float:right;
 	background: #f8f8f8;
 }
-.search input[type="text"] {
+.search input[type=text] {
 	outline: none;
 	color: #b3b3b3;
 	background: #f8f8f8;
@@ -223,7 +225,7 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 	border: none;
 	width: 84.33%;
 }
-.search input[type="submit"] {
+.search input[type=submit] {
 	background: url('../images/sprit-1.png') no-repeat 1px 1px #202021;
 	border: none;
 	cursor: pointer;
@@ -237,8 +239,9 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 .menu-strip {
 	/*background: #070808;*/
     background: #652020;
-	margin: 1em 0;
-	padding: 1em 0em 0.8em 0px;
+	/* margin: 1em 0; */
+    margin: 0em 0;
+	padding: 1em 0 0.8em 0;
 }
 .menu-strip ul li {
 	display:inline-block;
@@ -668,7 +671,7 @@ a.more{
 }
 .footer {
 	padding:1.5em 0;
-	border-top: 1px dotted #202021;
+	/*border-top: 1px dotted #202021;*/
 	margin-top:2em;
 }
 .copyright {
@@ -737,7 +740,7 @@ a.more1 {
 .side-bar {
 	padding: 0 0 0 25px;
 }
-.sign_up input[type="text"] {
+.sign_up input[type=text] {
 	width: 100%;
 	padding: 5px 10px;
 	border: none;
@@ -750,7 +753,7 @@ a.more1 {
 	border: 1px solid #bababa;
 	margin: 5px 0;
 }
-.sign_up input[type="submit"] {
+.sign_up input[type=submit] {
 	color: #fff;
 	font-size: 0.875em;
 	font-weight: 300;
@@ -944,7 +947,6 @@ h3.sn {
 	width: 55%;
 }
 .about-right{
-	padding:0 0 0 4em;
 }
 .about-us {
 	border-bottom: 1px dotted #A4A4A4;
@@ -1014,7 +1016,7 @@ p.bottom{
 	display: block;
 	margin-bottom: 5px;
 }
-.contact-form-row input[type="text"], .contact-form-row textarea {
+.contact-form-row input[type=text], .contact-form-row textarea {
 	width: 100%;
 	color: #777777;
 	font-size: 16px;
@@ -1033,7 +1035,7 @@ p.bottom{
 img.code{
 	margin-bottom:1em;
 }
-.contact-form-row input[type="submit"] {
+.contact-form-row input[type=submit] {
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 1.2em;
@@ -1046,7 +1048,7 @@ img.code{
 	margin-top: 1em;
 	border-radius:5px;
 }
-.contact-form-row input[type="submit"]:hover{
+.contact-form-row input[type=submit]:hover{
 	background:#000;
 }
 .contact-form-bottom {
@@ -1465,7 +1467,7 @@ ul.comment-list img {
 .desc p a:hover{
 	color: #848484;
 }
-.content-form form input[type="text"], .content-form form textarea {
+.content-form form input[type=text], .content-form form textarea {
 	padding: 10px 15px;
 	width: 100%;
 	color: #333;
@@ -1479,7 +1481,7 @@ ul.comment-list img {
 	height: 200px;
 	resize: none;
 }
-.content-form form input[type="submit"] {
+.content-form form input[type=submit] {
 	color: #fff;
 	background: #cf0000;
 	padding: 0.7em 1.7em;
@@ -1495,7 +1497,7 @@ ul.comment-list img {
 	-o-transition: 0.5s all ease;
 	-ms-transition: 0.5s all ease;
 }
-.content-form form input[type="submit"]:hover{
+.content-form form input[type=submit]:hover{
 	background:#000;
 }
 .content-form h3 {
@@ -1890,19 +1892,31 @@ text-align: left;
 
 @media screen and (max-width: 1440px) {
 	.news-paper {
-		margin: 4em 0;
+	margin: 0em -11.5em 0em -11.5em;
+}
+	.contact-form-row input[type=text], .contact-form-row textarea {
+		margin-bottom: 12px;
 	}
-	.contact-form-row input[type="text"], .contact-form-row textarea {
+	.contact-section {
+		padding: 2em 0;
+	}
+
+@media screen and (max-width: 1366px) {
+	.news-paper {
+	margin: 0em -9em 0em -9em;
+}
+	.contact-form-row input[type=text], .contact-form-row textarea {
 		margin-bottom: 12px;
 	}
 	.contact-section {
 		padding: 2em 0;
 	}
 }
+
 @media screen and (max-width: 1280px) {
 	.news-paper {
-		margin: 3em 0;
-	}
+	margin: 0em -6.5em 0em -6.5em;
+}
 	.about-left h3, .about-right h3, .team h3 {
 		font-size: 1.8em;
 	}	
@@ -2280,7 +2294,7 @@ text-align: left;
 		width: 57%;
 		padding: 2px 6px;
 	}
-	.search input[type="submit"] {
+	.search input[type=submit] {
 		background: url('../images/sprit-1.png') no-repeat 0px -1px #202021;
 		width: 30px;
 		height: 27px;
@@ -2446,7 +2460,7 @@ text-align: left;
 		float:right;
 		color:#000;
 	}
-	.search input[type="submit"] {
+	.search input[type=submit] {
 		height: 25px;
 	}
 	.top-menu ul li a {
@@ -2664,8 +2678,8 @@ text-align: left;
 		bottom: -10%;
 	}
 	.top-menu {
-		width: 100%;
-	}		
+	width: 100%;
+}
 	.top-menu ul li a {
 		font-size: 0.75em;
 	}
@@ -2777,7 +2791,7 @@ text-align: left;
 	.content-form {
 		margin-bottom: 4.5em;
 	}
-	.signup input[type="text"] {
+	.signup input[type=text] {
 		width: 100%;
 	}
 	.cricket h3 {
@@ -2810,10 +2824,10 @@ text-align: left;
 	.social_login .icon {
 		width: 15%;
 	}
-	.user_register input[type="checkbox"]+label {
+	.user_register input[type=checkbox] + label {
 		font-size: 13px;
 	}
-	.signup input[type="text"] {
+	.signup input[type=text] {
 		width: 100%;
 	}
 }
