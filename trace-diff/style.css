@@ -1,4 +1,4 @@
-﻿/*--
+/*--
 Author:
 Author URL: 
 License: Creative Commons Attribution 3.0 Unported
@@ -11,6 +11,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          url('../fonts/BEBAS___-webfont.woff') format('woff'),
          url('../fonts/BEBAS___-webfont.ttf') format('truetype'),
          url('../fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BicubikRegular';
+    src: url('../fonts/BicubikRegular.eot');
+    src: url('../fonts/BicubikRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BicubikRegular.woff') format('woff'),
+         url('../fonts/BicubikRegular.ttf') format('truetype'),
+         url('../fonts/Pollock1CTT-Regular.svg#Pollock1CTT-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -55,7 +65,8 @@ label{
 	margin:5em 0;
 }
 .header-left {
-	float:left;
+	margin: 1pt;
+	float: left;
 }
 .social-icons {
 	float: right;
@@ -115,19 +126,23 @@ i.rss {
 	background-position:-60px 0px;
 }
 .top-menu {
-	float:left;
-	margin-top:0.65em;
+	float: inherit;
+	margin-top: 0.65em;
 }
 .top-menu ul li {
-	display:inline-block;
-	  margin: 0 0.6em;
+	display: inline-block;
+	margin: 0 0.6em;
+	color: #000000;
 }
 
 .btn {padding:10px 20px; background: #F4F4F2;}
 .btn_red {background:#DBDBDB; color: #FFF;}
 
 .top-menu ul li a {
-	color:#cf0000;
+/*iva
+    */
+/*	color: #652020;*/
+    color: #801212;
 	text-decoration:none;
 	font-size:0.95em;
 	font-weight:600;
@@ -235,26 +250,47 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 	height: 32px;
 }
 .menu-strip {
+    /* черный сменили на цвет Кристины*/
 	/*background: #070808;*/
-    background: #652020;
-	margin: 1em 0;
-	padding: 1em 0em 0.8em 0px;
+/*    background: #652020;*/
+    background: #801212;
+/*	 margin: 1em 0; */
+    margin: 0em 0;
+	padding: 1em 0 0.8em 0;
 }
 .menu-strip ul li {
 	display:inline-block;
 }
 .menu-strip ul li a {
+/*    iva*/
 	color: #fff;
 	font-size: 1.1em;
+/*    font-size: 0.9em;*/
 	font-weight: 400;
 	font-family: 'bebasregular';
+/*    font-family: 'BicubikRegular';*/
 	text-decoration: none;
-	padding: 1.1em 1.5533555em 0.9em;
+/*	padding: 1.1em 1.5533555em 0.9em;*/
+    padding: 1.1em 1.5533555em 0.9em;
 }
 .menu-strip ul li:last-child {
 	text-align: right;
 }
 .menu-strip ul li a:hover {
+    /*цвет выделенной области*/
+	background: #cf0000;
+	color: #fff;
+}
+.menu-strip ul li a.active {
+/*    цвет выделенной области*/
+	background: #cf0000;
+	color: #fff;
+/*    margin: 0em 0 0 0;*/
+/*	padding: 1em 0 0.8em 0;*/
+/*   padding: 1.1em 1.5533555em 0.9em;*/
+}
+.menu-strip ul li:active {
+/*    цвет выделенной области*/
 	background: #cf0000;
 	color: #fff;
 }
@@ -944,7 +980,6 @@ h3.sn {
 	width: 55%;
 }
 .about-right{
-	padding:0 0 0 4em;
 }
 .about-us {
 	border-bottom: 1px dotted #A4A4A4;
@@ -1887,10 +1922,33 @@ text-align: left;
     margin-top: 1em;
 }
 /*-- responsive-design starts-here --*/
-
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1920px) {
 	.news-paper {
-	margin: 0em -20em 0em -20em;
+	margin: 0em -17em 0em -17em;
+}
+	.contact-form-row input[type=text], .contact-form-row textarea {
+		margin-bottom: 12px;
+	}
+	.contact-section {
+		padding: 2em 0;
+	}
+
+@media screen and (max-width: 1600px) {
+	.news-paper {
+	margin: 0em -15em 0em -15em;
+}
+	.contact-form-row input[type=text], .contact-form-row textarea {
+		margin-bottom: 12px;
+	}
+	.contact-section {
+		padding: 2em 0;
+	}
+
+
+
+@media screen and (max-width: 1440px) {
+	.news-paper {
+	margin: 0em -11em 0em -11em;
 }
 	.contact-form-row input[type=text], .contact-form-row textarea {
 		margin-bottom: 12px;
@@ -1913,7 +1971,7 @@ text-align: left;
 
 @media screen and (max-width: 1280px) {
 	.news-paper {
-	margin: 0em -6.5em 0em -6.5em;
+	margin: 0em -6em 0em -6em;
 }
 	.about-left h3, .about-right h3, .team h3 {
 		font-size: 1.8em;
@@ -2552,7 +2610,8 @@ text-align: left;
 	}
 	.menu-strip{
 		width:100%;
-		display: none;
+		/*display: none;*/
+		display:yes;
 		text-align:center;
 		background:#000;
 		padding:0;
@@ -2571,10 +2630,12 @@ text-align: left;
 		padding: 10px 0 7px 0px;
 	}
 	.menu-strip ul li a.active{
-		color:#fff;
+		/*iva color:#fff;*/
+		color:#d69090;
 	}
 	.menu-strip ul li a:hover{
-		color:#fff;
+		/*iva color:#fff;*/
+		color:#d69090;
 	}
 	.main-content {
 		margin-top: 1em;
@@ -2676,8 +2737,8 @@ text-align: left;
 		bottom: -10%;
 	}
 	.top-menu {
-		width: 100%;
-	}		
+	width: 100%;
+}
 	.top-menu ul li a {
 		font-size: 0.75em;
 	}
