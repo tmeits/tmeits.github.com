@@ -13,10 +13,10 @@
     <div id="contact_results"></div>
     <form id="contact_body" method="post" action="contact_trace.php">
         <label for="name"><span>First name <span class="required">*</span></span>
-            <input type="text" name="name" placeholder="Goblin" data-required="true"/>
+            <input type="text" name="name" placeholder="First name" value="First name" data-required="true"/>
         </label>
         <label for="name"><span>Last name <span class="required">*</span></span>
-            <input type="text" name="lastname" data-required="true"/>
+            <input type="text" name="lastname" placeholder="Last name" value="Last name" data-required="true"/>
         </label>
         <!-- Form of addressing -->
         <label for="name"><span>Form of addressing<span class="required">*</span></span>
@@ -24,36 +24,71 @@
             <input type="radio" name="addressing" value="prof"/> Prof. 
             <input type="radio" name="addressing" value="mr"/> Mr 
             <input type="radio" name="addressing" value="mrs"/> Mrs <br/>
-            
-            <!--<input  name="Radio1" type="radio" data-required="true"/>  checked="checked" 
-            <input  name="Radio2" type="radio" data-required="true"/>
-            <input  name="Radio3" type="radio" data-required="true"/>
-            <input  name="Radio4" type="radio" data-required="true"/>-->
+           
         </label><br>
         <!-- Form of addressing -->
         <label for="name"><span>Country<span class="required">*</span></span>
-            <input type="text" name="country" data-required="true"/>
+            <input type="text" name="country" placeholder="Country" value="Country"  data-required="true"/>
         </label>
         <label for="name"><span>Affiliation<span class="required">*</span></span>
-            <input type="text" name="affiliation" data-required="true"/>
+            <input type="text" name="affiliation"  placeholder="Affiliation" value="Affiliation" data-required="true"/>
         </label>
         <label for="name"><span>Position<span class="required">*</span></span>
-            <input type="text" name="position" data-required="true"/>
+            <input type="text" name="position"  placeholder="Position" value="Position" data-required="true"/>
         </label>
-        <label for="email"><span>Email adress<span class="required">*</span></span>
-            <input type="email" name="email" data-required="true"/>
+        
+        <label for="name"><span>Type of presentation<span class="required">*</span></span>
+            <input type="radio" name="presentation" value="oral"  checked="checked"/> Oral
+            <input type="radio" name="presentation" value="poster"/> Poster 
+        </label><br>
+        
+        <label for="name"><span>Presentation Title<span class="required">*</span></span>
+            <input type="text" name="position"  placeholder="Title" value="Title" data-required="true"/>
         </label>
-        <label><span>Phone number<span class="required">*</span></span>
-            <input type="text" name="phone1" maxlength="4" placeholder="+91" data-required="true"/>&mdash;
-            <input type="text" name="phone2" maxlength="15" data-required="true"/>
-        </label>
+        
         <label><span>Abstract Submission</span>
             <input type="file" name="file_attach[]"  />
         </label>
+        
+        <label for="email"><span>Email adress<span class="required">*</span></span>
+            <input type="email" name="email"  placeholder="name@domain.edu" value="name@domain.edu" data-required="true"/>
+        </label>
+        <label><span>Phone number<span class="required">*</span></span>
+            <input type="text" name="phone1" maxlength="4" placeholder="+79"  value="+79" data-required="true"/>&mdash;
+            <input type="text" name="phone2" maxlength="15" placeholder="2062463"  value="2062463" data-required="true"/>
+        </label>
+        
+        <label for="name"><span>Do you need visa<span class="required">*</span></span>
+            <input type="radio" name="visa" value="oral"  checked="checked"/> Yesl
+            <input type="radio" name="visa" value="poster"/> No 
+        </label><br>
+        
+        <label><span>Fill out the form</span>
+            <input type="file" name="file_attach[]"  />
+        </label>
+        
         <label><span>Passport scan</span>
             <input type="file" name="file_attach[]"  />
         </label>
         
+        <b>Short introduction and demonstration courses</b><hr><br>
+        
+        <label for="may16"><span>May16 check one</span>
+            <select name="may16">
+            <option value="R course (Ernst van der Maaten)">R course (Ernst van der Maaten)</option>
+            <option value="Climate-growth analyses (Wolfgang Beck)">Climate-growth analyses (Wolfgang Beck)</option>
+            </select>
+        </label>
+        
+        <label for="may17"><span>May 17: check one</span>
+            <select name="may17">
+            <option value=" Methods of quantitative and functional wood anatomy (Patrick Fonti).
+"> Methods of quantitative and functional wood anatomy (Patrick Fonti).
+</option>
+            <option value="Process modeling of tree-ring season growth">Process modeling of tree-ring season growth</option>
+            </select>
+        </label>
+        <br>
         <label for="subject"><span>Regarding</span>
             <select name="subject">
             <option value="General Question">General Question</option>
