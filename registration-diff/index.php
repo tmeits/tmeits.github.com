@@ -8,8 +8,10 @@
 </head>
 
 <body>
+<!-- <img src="http://trace2017.sfu-kras.ru/images/trace-images/top.jpg"> -->
+<div class="form-style-logo"></div>
 <div class="form-style" id="contact_form">
-    <div class="form-style-heading">TRACE 2017 Rgeistration Form</div>
+    <div class="form-style-heading">Registration Form</div>
     <div id="contact_results"></div>
     <form id="contact_body" method="post" action="contact_trace.php">
         <label for="name"><span>First name <span class="required">*</span></span>
@@ -42,6 +44,10 @@
             <input type="radio" name="presentation" value="poster"/> Poster 
         </label><br>
         
+        <label for="message"><span>Abstract Submission Message <span class="required">*</span></span>
+            <textarea name="message" data-required="true"></textarea>
+        </label>
+
         <label for="name"><span>Presentation Title<span class="required">*</span></span>
             <input type="text" name="position"  placeholder="Title" value="Title" data-required="true"/>
         </label>
@@ -59,11 +65,11 @@
         </label>
         
         <label for="name"><span>Do you need visa<span class="required">*</span></span>
-            <input type="radio" name="visa" value="oral"  checked="checked"/> Yesl
-            <input type="radio" name="visa" value="poster"/> No 
+            <input type="radio" name="visa" value="yes"  checked="checked"/> Yes
+            <input type="radio" name="visa" value="no"/> No 
         </label><br>
         
-        <label><span>Fill out the form</span>
+        <label><span>Fill the form</span>
             <input type="file" name="file_attach[]"  />
         </label>
         
@@ -71,10 +77,12 @@
             <input type="file" name="file_attach[]"  />
         </label>
         
-        <b>Short introduction and demonstration courses</b><hr><br>
+        <!-- <b>Short introduction and demonstration courses</b><hr><br> -->
+        <div class="form-style-heading2">Short introduction and demonstration courses</div>
         
-        <label for="may16"><span>May16 check one</span>
+        <label for="may16"><span>May 16: check one</span>
             <select name="may16">
+            <option value="Select the course, each worth 30 Euro">Select the course, each worth 30 Euro</option>
             <option value="R course (Ernst van der Maaten)">R course (Ernst van der Maaten)</option>
             <option value="Climate-growth analyses (Wolfgang Beck)">Climate-growth analyses (Wolfgang Beck)</option>
             </select>
@@ -82,23 +90,36 @@
         
         <label for="may17"><span>May 17: check one</span>
             <select name="may17">
-            <option value=" Methods of quantitative and functional wood anatomy (Patrick Fonti).
-"> Methods of quantitative and functional wood anatomy (Patrick Fonti).
-</option>
+            <option value="Select the course, each worth 30 Euro">Select the course, each worth 30 Euro</option>
+            <option value="Methods of quantitative and functional wood anatomy (Patrick Fonti)">Methods of quantitative and functional wood anatomy (Patrick Fonti)</option>
             <option value="Process modeling of tree-ring season growth">Process modeling of tree-ring season growth</option>
             </select>
         </label>
-        <br>
-        <label for="subject"><span>Regarding</span>
+        <div class="form-style-heading3"></div>
+        <label for="name"><span>Excursion to Kaliningrad and Baltic Federal University (20 Euros)<span class="required">*</span></span>
+            <input type="radio" name="excursion" value="yes"  checked="checked"/> Yes
+            <input type="radio" name="excursion" value="no"/> No 
+        </label><br><br><br>
+        <label for="name"><span>Conference dinner (30 Euros) <span class="required">*</span></span>
+            <input type="radio" name="dinner" value="yes"  checked="checked"/> Yes
+            <input type="radio" name="dinner" value="no"/> No 
+        </label><br><br>
+        
+        <label for="name"><span>Sesions, coffee breaks, welkome party ... (150 Euros) <span class="required">*</span></span>
+            <input checked disabled type="checkbox" name="" value="150">you can not refuse (150 Euros) <br>
+                <span>Sesions, coffee breaks, welkome party</span></p>
+        </label><br><br>
+        <!-- <label for="subject"><span>Regarding</span>
             <select name="subject">
             <option value="General Question">General Question</option>
             <option value="Advertise">Advertisement</option>
             <option value="Partnership">Partnership Oppertunity</option>
             </select>
-        </label>
-        <label for="message"><span>Message <span class="required">*</span></span>
-            <textarea name="message" data-required="true"></textarea>
-        </label>
+        </label> -->
+        <br><br>
+        <div class="form-style-heading2">Conference fees</div>
+        <b>Cost: 150 Euros</b>
+        <div class="form-style-heading3"></div>
         <label><span>&nbsp;</span>
         	<button type="submit">Submit</button>
         </label>
