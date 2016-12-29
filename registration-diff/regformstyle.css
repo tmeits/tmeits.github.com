@@ -70,10 +70,11 @@
 }
 .form-style  input[name=phone2]{
     width: 120px!important;
+/*     width: 180px!important;*/
 }
 .form-style input[type=text], input[type=email]{
-    width: 48%;
-   
+/*    width: 48%;*/
+   width: 68%;
 }
 
 .form-style input[type=text], input[type=email],
@@ -102,7 +103,9 @@
 }
 .form-style textarea{
     height:100px;
-    width: 55%;
+/*    height:150px;*/
+/*    width: 55%;*/
+    width: 68%;
 }
 .form-style button[type="submit"] {
     -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
