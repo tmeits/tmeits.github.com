@@ -128,11 +128,13 @@ i.rss {
 .top-menu {
 	float: inherit;
 	margin-top: 0.65em;
+    margin-left: 1.65em;
 }
 .top-menu ul li {
 	display: inline-block;
 	margin: 0 0.6em;
-	color: #000000;
+/*	color: #000000;*/
+    color: #CF0000;
 }
 
 .btn {padding:10px 20px; background: #F4F4F2;}
@@ -144,12 +146,15 @@ i.rss {
 /*	color: #652020;*/
     color: #801212;
 	text-decoration:none;
-	font-size:0.95em;
-	font-weight:600;
+/*	font-size:0.95em;*/
+    font-size:0.75em;
+/*	font-weight:600;*/
+    font-weight:700;
 }
 a.btn_red {color: #FFF;}
 .top-menu ul li a:hover {
-	color:#000;
+/*	color:#000;*/
+    color: #CF0000;
 }
 
 #lean_overlay {
