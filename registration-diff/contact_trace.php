@@ -1,8 +1,7 @@
 <?php
-//$recipient_email    = "ilynva@gmail.com"; //recepient
-$recipient_email    = "ilynva@yandex.ru"; //recepient
-//$from_email         = "ilyna.lora@gmail.com"; //from email using site domain.
-$from_email         = "ilynva@gmail.com";
+$recipient_email    = "ilynva@gmail.com"; //recepient
+// $from_email         = "info@your_domain.com"; //from email using site domain.
+$from_email         = "ilyna.lora@gmail.com";
 
 if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
 	die('Sorry Request must be Ajax POST'); //exit script
@@ -26,13 +25,13 @@ if($_POST){
     $sender_affiliation = filter_var($_POST["affiliation"], FILTER_SANITIZE_STRING);
     $sender_position = filter_var($_POST["position"], FILTER_SANITIZE_STRING);
     $sender_presentation = filter_var($_POST["presentation"], FILTER_SANITIZE_STRING);
-    $sender_message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+//    $sender_message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
     $sender_title = filter_var($_POST["title"], FILTER_SANITIZE_STRING);
     $sender_visa = filter_var($_POST["visa"], FILTER_SANITIZE_STRING);
     $sender_may16 = filter_var($_POST["may16"], FILTER_SANITIZE_STRING);
     $sender_may17 = filter_var($_POST["may17"], FILTER_SANITIZE_STRING);
     $sender_excursioncheckbox = filter_var($_POST["excursioncheckbox"], FILTER_SANITIZE_STRING);
-    $sender_dinner = filter_var($_POST["dinner"], FILTER_SANITIZE_STRING);
+    // $sender_dinner = filter_var($_POST["dinner"], FILTER_SANITIZE_STRING);
     //
     $attachments = $_FILES['file_attach'];
     
@@ -58,10 +57,10 @@ if($_POST){
         print json_encode(array('type'=>'error', 'text' => 'Subject is required'));
         exit;
     }*/
-    if(strlen($message)<3){ //check emtpy message
+    /*if(strlen($message)<3){ //check emtpy message
         print json_encode(array('type'=>'error', 'text' => 'Too short Abstract Submission Message! Please enter something.'));
         exit;
-    }
+    }*/
 
     
     
@@ -93,18 +92,21 @@ if($_POST){
         $form_body .= "Position: ".$sender_position."\r\n";
         $form_body .= "Type of presentation: ".$sender_presentation."\r\n";
         $form_body .= "Presentation Title: ".$sender_title."\r\n";
-        $form_body .= "Abstract Submission Message: ".$sender_message."\r\n";
+//        $form_body .= "Abstract Submission Message: ".$sender_message."\r\n";
         $form_body .= "Email adress: ".$sender_email."\r\n";
         $form_body .= "Phone number: ".$country_code."-".$phone_number."\r\n";
         $form_body .= "Do you need visa: ".$sender_visa."\r\n";
         $form_body .= "Short courses, May 16: ".$sender_may16."\r\n";
         $form_body .= "Short courses, May 17: ".$sender_may17."\r\n";
+        /*
         if($sender_excursioncheckbox == ""){
             $form_body .= "Excursion Kaliningrad and Baltic Federal University: No\r\n";
         }else{
             $form_body .= "Excursion Kaliningrad and Baltic Federal University: Yes\r\n";
-        }
-        $form_body .= "Conference dinner: ".$sender_dinner."\r\n";
+        }*/
+        
+        $form_body .= "Excursion: ".$sender_excursioncheckbox."\r\n";
+        // $form_body .= "Conference dinner: ".$sender_dinner."\r\n";
 //        $form_body .= ": ".."\r\n";
         $form_body .= "===============================\r\n";
         //
