@@ -51,3 +51,6 @@ https://itchief.ru/lessons/bootstrap-3/38-bootstrap-3-navigation-menu
 http://bootstrap3-menu.codedorigin.com/#sthash.wEebW8oX.dpbs
 
 http://demo.themeum.com/html/oxygen/
+
+http://stackoverflow.com/questions/23190730/how-to-display-hide-a-hidden-div-with-radio-button-values-key
+http://jsfiddle.net/hXE2X/
