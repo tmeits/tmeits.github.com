@@ -54,3 +54,6 @@ http://demo.themeum.com/html/oxygen/
 
 http://stackoverflow.com/questions/23190730/how-to-display-hide-a-hidden-div-with-radio-button-values-key
 http://jsfiddle.net/hXE2X/
+
+https://jsfiddle.net/2vr7m11v/2/
+
