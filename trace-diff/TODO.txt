@@ -64,3 +64,5 @@ TypeScript
 https://typescriptrus.blogspot.ru/
 http://metanit.com/web/typescript/1.1.php
 https://habrahabr.ru/post/173813/
+
+https://jsfiddle.net/2vr7m11v/6/
