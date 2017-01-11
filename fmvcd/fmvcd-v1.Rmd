@@ -1,0 +1,64 @@
+---
+title: "filling in missing values in climate data"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+```{r read_cli}
+rm(list=ls())
+setwd("C:/Users/IVA/Dropbox/24516/trace2017/fmvcd/krest/"); getwd()
+file_list <- list.files(pattern = "\\.cli$"); file_list
+ 
+for (file in file_list){
+       
+  # if the merged dataset doesn't exist, create it
+  if (!exists("dataset")){
+    dataset <- read.table(file, header=FALSE, sep="")
+  }
+   
+  # if the merged dataset does exist, append to it
+  if (exists("dataset")){
+    temp_dataset <-read.table(file, header=FALSE, sep="")
+    dataset<-rbind(dataset, temp_dataset)
+    rm(temp_dataset)
+  }
+}
+dataset_krest <- dataset; names(dataset_krest) <- c("day", "month", "year", "prec", "temp")
+```
+#### To detect missing data.
+```{r filter_cli}
+dataset_krest_prec_missing <- dataset_krest[dataset_krest$prec == -9999, c(1,2,3,4)]; length(dataset_krest_prec_missing[,1])
+dataset_krest_temp_missing <- dataset_krest[dataset_krest$temp == -9999, c(1,2,3,5)]; length(dataset_krest_temp_missing[,1])
+dataset_krest_prec <- dataset_krest[dataset_krest$prec != -9999, c(1,2,3,4)]; summary(dataset_krest_prec)
+dataset_krest_temp <- dataset_krest[dataset_krest$temp != -9999, c(1,2,3,5)]; summary(dataset_krest_temp)
+
+```
+#### Replacement of -9999 to a default value NA
+```{r set_NA}
+dataset_krest[dataset_krest$prec == -9999, 4] <- NA 
+dataset_krest[dataset_krest$temp == -9999, 5] <- NA
+```
+#### replace missing data with appropriate design values.
+  + Completely missing at random?
+  + Missing at random?
+  + Nonrandom pass?
+```{r standart_packages}
+#install.packages(c("VIM", "mice"))
+require(dplyr); require(VIM); require(mice)
+```
+#### replace missing data with appropriate values calculated using the neural network.
+```{r}
+```
+#### Links
+
+  + http://r-analytics.blogspot.ru/2014/09/r.html#.WHW04dKLRhE
+  + http://user2016.org/
+  + https://earlconf.com/2017/
+  + http://international.sfu-kras.ru/news/17388
+
+
+
+
+
+
