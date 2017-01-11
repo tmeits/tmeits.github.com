@@ -38,6 +38,16 @@
     .auto-style8 {
         margin: 5px;
     }
+    #prog_block_id {
+        display: none;
+        background: #D8FFC0;
+        padding: 5px 10px 5px 10px;
+        margin: 0px 0px 5px 0px;
+        border: none;
+        /*font-weight: bold; */
+        color: #2E6800;
+    }
+
 </style>
 
 </head>
@@ -56,15 +66,15 @@
 			<span class="menu"></span>
 			<div class="menu-strip">
 				<ul>           
-					<li><a href="index.html">HOME</a></li>      
-					<li><a href="registration.html">REGISTRATION</a></li>
-					<li><a class="hover" href="venue.html">VENUE</a></li>
-					<li><a class="active" href="programme.html">PROGRAM</a></li>
-					<li><a href="important_dates.html">IMPORTANT&nbsp; DATES</a></li>
-					<li><a href="accommodation.html">ACCOMMODATION</a></li>
-                    <li><a href="financial_support.html">financial support</a></li>
-					<li><a href="travel_info.html">TRAVEL AND VISA INFO</a></li>
-					<li><a href="contacts.html">CONTACTS</a></li> 
+					<li><a href="venue.html">Venue</a></li>
+                    <li><a href="financial_support.html">Financial&nbsp;&nbsp; Support</a></li>
+                    <li><a href="travel_info.html">Travel&nbsp;&nbsp; and&nbsp;&nbsp; Visa</a></li>
+                    <li><a class="active" href="programme.html">Program</a></li>
+                    <li><a href="index.html">Home</a></li>      
+                    <li><a href="registration.html">Registration</a></li>
+                    <li><a href="important_dates.html">Important&nbsp;&nbsp;&nbsp; Dates</a></li>
+                    <li><a href="accommodation.html">Accommodation</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
 				</ul>
 			</div>
 
@@ -99,43 +109,69 @@
                     <br><br>
                     <div class="text-padding">
                         <div class="trace_kristina_body_font">
-                            <p class="text-center" style= "font-size: 21px;"><b>Preliminary Schedule</b>
-                            </p><br>
+                            <!-- <p class="text-center" style= "font-size: 21px;"><b>Preliminary Schedule</b></p> -->
+                            <p  style= "font-size: 21px;"><b>Preliminary Schedule</b></p>
+                            <br>
                         
-                        <h4><b>Pre-conference international school “Data Analysis in Tree-Ring Research”</b></h4><br>
-                        <h4><b>Four introduction and demonstration courses </b></h4><br>
+                            <h4><b>Pre-conference international school “Data Analysis in Tree-Ring Research”</b></h4><br>
+
+                            <h4><b>Four introduction and demonstration courses</b></h4><br>
                         
-                        <b>Monday, May 15:</b><br> 
-                        Evening: Arrival of first workshop participants;<br><br>
-                        <b>Tuesday, May 16:</b><br> 
-                        “Process modeling” (the instructor is not yet determined)<br> “Methods of quantitative and functional wood anatomy” (Patrick Fonti, WSL Switzerland).<br><br> 
-                        <b>Wednesday, May 17:</b><br> 
-                        “R course” (Ernst van der Maaten, University of Greifswald, Germany)<br>
-                        “Climate-growth analyses course” (Wolfgang Beck, Johann Heinrich von Thunen Institute, Germany)<br><br> 
+                            <b>Monday, May 15:</b><br> 
+                            Evening: Arrival of first workshop participants;<br><br>
 
+                            <b>Tuesday, May 16:</b><br> 
+                            “Process Modeling” (the instructor is not yet determined)<br> 
+                            “Methods of Quantitative and Functional Wood Anatomy” (Patrick Fonti, WSL Switzerland).<br><br>
 
-                        <h4><b>Conference</b></h4><br>
-                        <b>Wednesday, May 17:</b><br> 
-                        Evening: Arrival of conference participants; Registration, welcome party<br><br>
+                            <b>Wednesday, May 17:</b><br> 
+                            “R course” (Ernst van der Maaten, University of Greifswald, Germany)<br> 
+                            “Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)<br> 
+                            
+                            <!-- the summary here -->
+                            <a href="javascript:void(0)" onclick="showHide('prog_block_id')" style="color:#801212;"><u>the summary here - Show/Hide</u></a>
+                            <div id="prog_block_id">
+                                <ol>
+                                <li> The philosophy of CLIMTREG - what are the differences compared to other methods;</li>
+                                 <li> Explanations: parts of CLIMTREG; data structures, paths, exercise of installation on PC/notebook; Interested colleagues should bring their own notebooks.</li>
+                                 <li> Opportunities to use CLIMTREG, modes to operate;</li>
+                                 <li> Where to find the results ? paths, data structures, additional tools to display and analyse the result data files;</li>
+                                 <li> Findings obtained from CLIMTREG results: </li>
+                                     * Changing climatic effects on tree growth rates;<br>
+                                     * Share of effects of summerly heat and drought only, compared to the effects of all included climatic variables<br>
+                                     * Proof of the adaptability of trees to changing climate;<br>
+                                     * How to apply climatic scenarios of the future development?<br>
+                                     * On the value of results obtained from scenario simulations ...
+                                 <li> Further development of CLIMTREG
+                                </ol>
+                                <!-- http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/print-icon.html 
+                                http://icons.iconarchive.com/icons/graphicloads/100-flat/48/print-icon.png
+                                -->
+                                <a href="javascript:window.print()"><img src="print-icon.png"></a>
+                            </div>
+                            <br><br>
 
-                        <b>Thursday, May 18:</b><br> 
-                        Morning and Afternoon: Conference sessions, Evening: ATR meeting<br><br>
+                            <h4><b>Conference</b></h4><br>
+                            <b>Wednesday, May 17:</b><br> 
+                            Evening: arrival of conference participants; registration, welcome party<br><br>
 
-                        <b>Friday, May 19:</b><br> 
-                        Morning: Conference sessions, Afternoon: Excursion to the Curonian Spit National Park, Evening: Conference party<br><br>
+                            <b>Thursday, May 18:</b><br> 
+                            Morning and afternoon: conference sessions, evening: ATR meeting<br><br>
 
-                        <b>Saturday, May 20:</b><br> 
-                        Morning: Conference sessions, Afternoon: Conference sessions; Closing ceremony and awards<br><br>
+                            <b>Friday, May 19:</b><br> 
+                            Morning: conference sessions, afternoon: excursion to the Curonian Spit National Park, Evening: conference party<br><br>
 
-                        <b>Sunday, May 21:</b><br>
-                        Morning: Departures Day: Excursions to Baltic Federal University and Kaliningrad (optional)<br><br>
+                            <b>Saturday, May 20:</b><br> 
+                            Morning: conference sessions, afternoon: conference sessions; closing ceremony and awards<br><br>
 
+                            <b>Sunday, May 21:</b><br>
+                            Morning: departures Day: optional excursions  (Baltic Federal University, Kaliningrad, Amber excursion)<br><br>
 
+                            <b>The detailed program of the conference will be published in early April.</b><br>
+                            A list of registered participants and proposed contributions is 
+                                <a href="http://trace2017.sfu-kras.ru/registered_participants.html" style="color:#801212;"><u>available here</u> </a>.   
 
-                        <b>The detailed program of the conference will be published in early April.</b><br>
-                        A list of registered participants and proposed contributions is 
-                            <a href="http://trace2017.sfu-kras.ru/registered_participants.html" style="color:#801212;"><u>available here</u> </a>.                            
-                        <br><br>
+                            <br><br>
                     </div>
                     </div>
                 </div>
@@ -147,14 +183,34 @@
                 </div>
 				<br>
             <!-- LOGO -->
-            <div class="col-lg-12 text-center">
+             <div class="col-xs-12 text-center">
                 
-                	<img height="70" src="images/logo/ATRSchein.png" width="230"><img height="60" src="images/logo/BFU_logo_full.jpg" width="210" class="auto-style2"><img height="60" src="images/logo/logo-rus-color-1280.png" width="210" class="auto-style2"><img height="60" src="images/logo/SFU_logo_vertical.png" width="100" class="auto-style8">
+                	<img  src="images/trace-images/sponsors.jpg" height="100%" width="100%">
             </div>
             <!-- BOTTOM -->    
 				<div class="col-xs-12"> 
 					 <img height="36" src="images/123/bottom.jpg" width="100%">
                 </div>
+            <!-- -->
+            <script type="text/javascript">
+            /**
+            * Function Hides/Shows the block 
+            **/
+            function showHide(element_id) {
+                //Если элемент с id-шником element_id существует
+                if (document.getElementById(element_id)) { 
+                    //Записываем ссылку на элемент в переменную obj
+                    var obj = document.getElementById(element_id); 
+                    //Если css-свойство display не block, то: 
+                    if (obj.style.display != "block") { 
+                        obj.style.display = "block"; //Показываем элемент
+                    }
+                    else obj.style.display = "none"; //Скрываем элемент
+                }
+                //Если элемент с id-шником element_id не найден, то выводим сообщение
+                else alert("Элемент с id: " + element_id + " не найден!"); 
+            }   
+            </script>
             <!-- GoogleAnalytics -->
             <script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
