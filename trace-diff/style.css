@@ -126,9 +126,13 @@ i.rss {
 	background-position:-60px 0px;
 }
 .top-menu {
-	float: inherit;
+    /** 
+    IVA 11.1.17
+    **/
+/*	float: inherit;*/
+    text-align: center;
 	margin-top: 0.65em;
-    margin-left: 1.65em;
+/*    margin-left: 1.65em;*/
 }
 .top-menu ul li {
 	display: inline-block;
@@ -141,8 +145,9 @@ i.rss {
 .btn_red {background:#DBDBDB; color: #FFF;}
 
 .top-menu ul li a {
-/*iva
-    */
+/** 
+    IVA 11.1.17
+    **/
 /*	color: #652020;*/
     color: #801212;
 	text-decoration:none;
