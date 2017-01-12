@@ -43,6 +43,35 @@
 .auto-style8 {
 	margin: 5px;
 }
+
+#prog_block_id {
+        display: none;
+        background: #D8FFC0;
+        padding: 5px 10px 5px 10px;
+        margin: 0px 0px 5px 0px;
+        border: none;
+        /*font-weight: bold; */
+        color: #2E6800;
+    }
+    #prog_block_r {
+        display: none;
+        background: #D8FFC0;
+        padding: 5px 10px 5px 10px;
+        margin: 0px 0px 5px 0px;
+        border: none;
+        /*font-weight: bold; */
+        color: #2E6800;
+    }
+    #prog_block_wood_anatomy {
+        display: none;
+        background: #D8FFC0;
+        padding: 5px 10px 5px 10px;
+        margin: 0px 0px 5px 0px;
+        border: none;
+        /*font-weight: bold; */
+        color: #2E6800;
+    }
+
 </style>
 
 
@@ -64,19 +93,28 @@
     <div class="clearfix"></div>			
 			<span class="menu"></span>
 			<div class="menu-strip">
-				<ul>           
-					<li><a href="index.html">HOME</a></li>      
-					<li><a class="active" href="registration.html">REGISTRATION</a></li>
-					<li><a href="venue.html">VENUE</a></li>
-					<li><a href="programme.html">PROGRAM</a></li>
-					<li><a href="important_dates.html">IMPORTANT&nbsp;&nbsp;&nbsp; DATES</a></li>
-					<li><a href="accommodation.html">ACCOMMODATION</a></li>
-                    <li><a href="financial_support.html">financial support</a></li>
-					<li><a  href="travel_info.html">TRAVEL AND VISA INFO</a></li>
-					<li><a href="contacts.html">CONTACTS</a></li> 
+				<ul>        
+                    <!--<li><a href="venue.html">Venue</a></li>
+                    <li><a href="financial_support.html">Financial&nbsp;&nbsp; Support</a></li>
+                    <li><a href="travel_info.html">Travel&nbsp;&nbsp; and&nbsp;&nbsp; Visa</a></li>
+                    <li><a href="programme.html">Program</a></li>
+					<li><a href="index.html">Home</a></li>      
+					<li><a class="active" href="registration.html">Registration</a></li>
+					<li><a href="important_dates.html">Important&nbsp;&nbsp;&nbsp; Dates</a></li>
+					<li><a href="accommodation.html">Accommodation</a></li>
+					<li><a href="contacts.html">Contacts</a></li>--> 
+                    <li><a href="venue.html">Venue</a></li>
+                    <li><a href="financial_support.html">Financial Support</a></li>
+                    <li><a href="travel_info.html">Travel and Visa</a></li>
+                    <li><a  href="programme.html">Program</a></li>
+                    <li><a href="index.html">Home</a></li>      
+                    <li><a class="active" href="registration.html">Registration</a></li>
+                    <li><a href="important_dates.html">Important Dates</a></li>
+                    <li><a href="accommodation.html">Accommodation</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
 				</ul>
 			</div>
-<!-- script for menu -->
+            <!-- script for menu -->
 				<script>
 				$( "span.menu" ).click(function() {
 				  $( ".menu-strip" ).slideToggle( "slow", function() {
@@ -85,7 +123,6 @@
 				});
 			</script>
 			<!-- script for menu -->
-			
             <!-- -->
             <!-- /MENU --> 			
             	<div class="clearfix"></div>
@@ -118,7 +155,6 @@
             <input type="radio" name="addressing" value="Prof."/> Prof. 
             <input type="radio" name="addressing" value="Mr"/> Mr 
             <input type="radio" name="addressing" value="Mrs"/> Mrs <br/>
-           
         </label><br>
         <!-- Form of addressing -->
         <label for="country"><span>Country<span class="required">*</span></span>
@@ -136,9 +172,13 @@
             <input type="radio" name="presentation" value="Poster"/> Poster 
         </label><br>
         
-        <label for="title"><span>Presentation Title<span class="required">*</span></span>
+        <label for="title"><span>Provisional Presentation Title<span class="required">*</span></span>
             <input type="text" name="title"  placeholder="Title" value="Title" data-required="true"/>
         </label>
+        
+        <div class="form-style-heading-abstract">
+            To submit the abstract please (1) <a href="http://trace2017.sfu-kras.ru/docs/trace_2017_abstract_template.docx" style="color:#801212;"><u>download the abstract template here </u></a> or in “Abstract Submission”, (2) prepare the text fitting the abstract template and then (3)  send it to <a href="mailto:TRACE2017Russia@mail.ru" style="color:#801212;"><u>TRACE2017Russia@mail.ru</u></a> by March, 10th.
+        </div>
         
         <!--<div class="form-style-heading2">abstract submission оставить только текст, to submit the the abstract, please prepare the text fitting the abstract template and then send it to TRACE2017Russia@mail.ru by March, 10th.</div>-->
         <!--<label for="message"><span>Abstract Submission Message <span class="required">*</span></span>
@@ -146,7 +186,7 @@
         </label>
 
         -->
-        <div class="form-style-heading4">Abstract Submission to submit the the abstract please prepare the text fitting the abstract template and then send it to <a href="mailto:TRACE2017Russia@mail.ru" style="color:#801212;"><u>TRACE2017Russia@mail.ru</u></a> by March, 10th.</div>
+        <!--<div class="form-style-heading4">Abstract Submission to submit the the abstract please prepare the text fitting the abstract template and then send it to <a href="mailto:TRACE2017Russia@mail.ru" style="color:#801212;"><u>TRACE2017Russia@mail.ru</u></a> by March, 10th.</div>-->
         <!--<label><span>Abstract Submission</span>
                 <textarea  disabled name=""   value="..................."/>to submit the the abstract please prepare the text fitting the abstract template and then send it to TRACE2017Russia@mail.ru by March, 10th.</textarea>
             <input type="file" name="file_attach[]"  />
@@ -160,14 +200,24 @@
             <input type="text" name="phone2" maxlength="15" placeholder="912062463"  value="912062463" data-required="true"/>
         </label>
         
-        <label for="visa"><span>Do you need visa<span class="required">*</span></span>
-            <input type="radio" name="visa" value="Yes"  checked="checked"/> Yes
-            <input type="radio" name="visa" value="No"/> No 
+        <label for="visa"><span>Do you need visa  to enter Russian Federation?<span class="required">*</span></span>
+            <input type="radio" name="visa" value="Yes"
+                   onclick='return onRadioSelect(this);'   /> Yes
+            <input type="radio" name="visa" value="No" onclick='return onRadioSelect(this);'  checked="checked" /> No 
         </label><br>
         
-        <label><span>Fill the form and Passport scan archive*</span>
-            <input type="file" name="file_attach[]"  />
-        </label>
+        <div id="info_visa">
+          <h4>
+          Please, read thoroughly the information in <a href="http://trace2017.sfu-kras.ru/travel_info.html"><b><u>Visa and Travel Info</u></b></a> and follow the instructions.<br><br>
+          Please, remember, the documents are to be provided by<b> March, 10th</b>. </h4>
+        </div>
+        
+        
+        <div class="file-attach">        
+            <label><span>File Attach*</span>
+                <input type="file" name="file_attach[]" multiple />
+            </label>
+        </div>
         
         <!--<label><span>Passport scan*</span>
             <input type="file" name="file_attach[]" data-required="true"/>
@@ -175,40 +225,86 @@
         </label>-->
         
         <!-- <b>Short introduction and demonstration courses</b><hr><br> -->
-        <div class="form-style-heading2">Short introduction and demonstration courses</div>
+        <div class="form-style-heading-courses">
+            <p style="font-size:16px;"><b>Short Introduction and Demonstration Courses</b></p>
+            <br>
+             Each course starts at 9.30 and lasts about eight hours. The cost is 20 euros per course.  <br>Coffee breaks and lunch are included.
+        </div>
         
+        <!-- 1616 -->
         <label for="may16"><span>May 16<span class="required">*</span></span>
             <select name="may16">
-<!--            <option value="Select the course, each worth 30 Euro">Select the course, each worth 30 Euro</option>-->
-            
-            <option value="R course (Ernst van der Maaten)">R course (Ernst van der Maaten)</option>
-            <option value="Climate-growth analyses (Wolfgang Beck)">Climate-growth analyses (Wolfgang Beck)</option>
-            <option value="I will not participate">I will not participate</option>   
+                <option value="I will not participate"> I will not participate</option>
+                <option value="Methods of quantitative and functional wood anatomy"> Methods of quantitative and functional wood anatomy</option>
+                <option value="Process Modeling (the instructor is not yet determined)"> Process Modeling (the instructor is not yet determined)</option> 
             </select>
         </label>
-        
+            <div id="prog_block_wood_anatomy">
+                Georg von Arx and Patrick Fonti, WSL Switzerland.<br><br>
+                The course  introduces to theoretical and practical aspects of analyzing of cell anatomical features along series of tree rings, including sample preparation, cell measurements and data analysis. 
+                    <br><br>
+                In particular the participants will learn about the dos and don'ts of sample preparation and measurements, obtain a demonstration of ROXAS (the most versatile software for cell anatomical measurements) and of some examples of data analyses and applications.
+                    <br>
+                <a href="javascript:window.print()"><img src="print-icon.png"></a>
+            </div>
+        <!-- 1717 -->
         <label for="may17"><span>May 17<span class="required">*</span></span>
             <select name="may17">
-<!--            <option value="Select the course, each worth 30 Euro">Select the course, each worth 30 Euro</option>-->
-            
-            <option value="Methods of quantitative and functional wood anatomy (Patrick Fonti)">Methods of quantitative and functional wood anatomy (Patrick Fonti)</option>
-            <option value="Process modeling of tree-ring season growth">Process modeling of tree-ring season growth</option>
-            <option value="I will not participate">I will not participate</option> 
+                <option value="R Fundamentals in Dendrochronology">R Fundamentals in Dendrochronology</option>
+                <option value="Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG">Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG</option>
+                <option value="I will not participate">I will not participate</option> 
             </select>
         </label>
-        <div class="form-style-heading2">Three optional excursions half a day each they starts at 9:30, May, 21</div>
-        <!--ВА, в регистрации надо экскурсии сделать три:
+        <!-- "R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)
+        "Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)<br> -->
+        <div id="prog_block_r">
+                                The R language and programming environment is increasingly used in dendrochronology. R is the world’s preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. 
+                                <br><br>
+                                There are several R packages for working with tree- ring data, like dplR for standardization and chronology building, treeclim for climate-growth analysis, and pointRes for analyses of pointer years and components of tree resilience. 
+                                <br><br>
+                                Although extremely powerful, R has a steep learning curve that has lead some to postpone using it in their own work. In this interactive workshop, the fundamentals of R will be explained. Further, the aforementioned packages will be demonstrated. 
+                                <br><br>
+                                The workshop format will include a demonstration using onboard data sets but will also include a chance for participants to work with their own data in a collaborative environment. The workshop targets specifically at novice and entry-level R users.<br>
+                                <a href="javascript:window.print()"><img src="print-icon.png"></a>
+        </div>
 
-        Baltic Federal University - free
-        Kaliningrad  - 20 euros
-        Amber Excursion - 20 euros
+        <div id="prog_block_id">
+                                <ol>
+                                <li> The philosophy of CLIMTREG - what are the differences compared to other methods;</li>
+                                 <li> Explanations: parts of CLIMTREG; data structures, paths, exercise of installation on PC/notebook; Interested colleagues should bring their own notebooks.</li>
+                                 <li> Opportunities to use CLIMTREG, modes to operate;</li>
+                                 <li> Where to find the results ? paths, data structures, additional tools to display and analyse the result data files;</li>
+                                 <li> Findings obtained from CLIMTREG results: </li>
+                                     * Changing climatic effects on tree growth rates;<br>
+                                     * Share of effects of summerly heat and drought only, compared to the effects of all included climatic variables<br>
+                                     * Proof of the adaptability of trees to changing climate;<br>
+                                     * How to apply climatic scenarios of the future development?<br>
+                                     * On the value of results obtained from scenario simulations ...
+                                 <li> Further development of CLIMTREG
+                                </ol>
+                                <!-- http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/print-icon.html 
+                                http://icons.iconarchive.com/icons/graphicloads/100-flat/48/print-icon.png
+                                -->
+                                <a href="javascript:window.print()"><img src="print-icon.png"></a>
+            </div>
 
-        They start at 9:30, May, 21-->
+        <!-- -->
+        <label for="vegetarian"><span>Are you vegetarian?<span class="required">*</span></span>
+            <input type="radio" name="vegetarian" value="Yes"  /> Yes
+            <input type="radio" name="vegetarian" value="No" checked="checked"/> No 
+        </label><br>
+        
+        <div class="form-style-heading-courses">
+             <p style="font-size:16px;"><b>Excursions (optional)</b></p>
+            <br>
+            Three optional excursions (half a day each) start at 9:30, May, 21
+        </div>
         
         <label for="name"><span>Excursion:<span class="required">*</span><br><br><br><br></span>
-            <input type="radio" name="excursioncheckbox" value="Baltic Federal University"  checked="checked"/> Baltic Federal University<br>
-            <input type="radio" name="excursioncheckbox" value="Kaliningrad"/> Kaliningrad<br>
-            <input type="radio" name="excursioncheckbox" value="Amber excursion"/> Amber excursion<br>
+            <input type="radio" name="excursioncheckbox" value="no excursion"  checked="checked"/> no excursion<br>
+            <input type="radio" name="excursioncheckbox" value="Baltic Federal University - free"  checked="checked"/> Baltic Federal University - free<br>
+            <input type="radio" name="excursioncheckbox" value="Kaliningrad - 20 euros"/> Kaliningrad - 20 euros<br>
+            <input type="radio" name="excursioncheckbox" value="Amber excursion - 20 euros"/> Amber excursion - 20 euros<br>
         </label>
         
         <!--<label for="excursioncheckbox"><span>Excursion (20 Euros) <span class="required">*</span></span>
@@ -248,6 +344,31 @@
     </div>
 <!-- <div class="form-style-bottom"></div> -->
 
+<script language="javascript">
+  function onSelect16(obj) {
+    var selectedValue = obj.value;
+    //alert("!!!!");
+    if (selectedValue == "Yes") {
+      document.getElementById('info_visa').style.display = 'block';
+    }
+    else if (selectedValue == "No") {
+      document.getElementById('info_visa').style.display = 'none';
+    }
+  }
+</script>
+
+<script language="javascript">
+  function onRadioSelect(obj) {
+    var selectedValue = obj.value;
+    //alert("!!!!");
+    if (selectedValue == "Yes") {
+      document.getElementById('info_visa').style.display = 'block';
+    }
+    else if (selectedValue == "No") {
+      document.getElementById('info_visa').style.display = 'none';
+    }
+  }
+</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 <script type="text/javascript">
@@ -288,7 +409,7 @@ $("#contact_body").submit(function(e){
              total_files_size = total_files_size + ifile.size; //add file size to total size
 			}
 		}); 
-        //
+        // http://blog.teamtreehouse.com/uploading-files-ajax
         
         //
        if(total_files_size > allowed_file_size){ 
