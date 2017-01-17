@@ -1,7 +1,69 @@
 /* TRACE 2017 RegForm style */
+#prog_block_id {
+    display: none;
+    max-width: 670px;
+    background: #D8FFC0;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 0px 5px 0px;
+    border: none;
+    /*font-weight: bold; */
+    color: #2E6800;
+}
+#prog_block_r {
+    display: none;
+    max-width: 670px;
+    background: #D8FFC0;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 0px 5px 0px;
+    border: none;
+    /*font-weight: bold; */
+    color: #2E6800;
+}
+#prog_block_wood_anatomy {
+    display: none;
+    max-width: 670px;
+    background: #D8FFC0;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 0px 5px 0px;
+    border: none;
+    /*font-weight: bold; */
+    color: #2E6800;
+}
+
+#info_visa {
+    display:none;
+    max-width: 670px;
+    background: #D8FFC0;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 0px 5px 0px;
+	border: none;
+	font-weight: bold; 
+	color: #2E6800;
+	border-left: 3px solid #2E6800;
+}
+#info_wood_anatomy {
+    display:none;
+    max-width: 670px;
+    background: #D8FFC0;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 0px 5px 0px;
+    border: none;
+    font-weight: bold; 
+    color: #2E6800;
+    border-left: 3px solid #2E6800;
+}
+
+.info_visa_class {
+  display:none;  
+}
+
+.file-attach {
+    visibility: hidden;
+    height: 7px;
+}
 .form-style{
 	/*max-width: 450px;*/
-    max-width: 720px;
+    max-width: 700px;
 	padding: 40px 30px 40px 40px;
 	font: 13px Arial, Helvetica, sans-serif;
 	margin: 20px auto;
@@ -46,6 +108,7 @@
 }
 
 .form-style-heading{
+    max-width: 670px;
     font-weight: bold;
     font-style: italic;
     border-bottom: 2px solid #ddd;
@@ -54,20 +117,61 @@
     padding-bottom: 3px;
 }
 .form-style-heading2{
+    max-width: 670px;
     font-weight: bold;
     font-style: italic;
     border-bottom: 2px solid #ddd;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 16px;
     padding-bottom: 3px;
 }
 .form-style-heading4{
+    max-width: 670px;
     font-weight: bold;
     font-style: italic;
     border-bottom: 2px solid #ddd;
     margin-bottom: 10px;
     font-size: 14px;
     padding-bottom: 3px;
+}
+.form-style-heading-abstract{
+    max-width: 670px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;
+/*    border: 2px solid #ddd;*/
+    background-color: #eeeeee;
+/*    border-bottom: 2px solid #ddd;*/
+    margin: 2px;
+    margin-bottom: 9px;
+    padding: 15px;
+    
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-style-heading-courses{
+    max-width: 670px;
+/*    font-weight: bold;*/
+    font-style: italic;
+    font-size: 14px;
+/*    border: 2px solid #ddd;*/
+    background-color: #eeeeee;
+/*    border-bottom: 2px solid #ddd;*/
+    margin: 2px;
+    margin-bottom: 9px;
+    padding: 15px;
+    
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 .form-style-heading3{
@@ -84,7 +188,7 @@
 /*    font-family:'Pollock1CTT-Regular', sans-serif;*/
 /*    font-size: 16px;*/
 /*    font-weight: 50;*/
-    width: 170px;
+    width: 200px;
 /*    color: #595959;*/
     color: black;
     font-weight: bold;

@@ -1,6 +1,9 @@
 <?php
 $recipient_email    = "ilynva@gmail.com"; //recepient
 // $from_email         = "info@your_domain.com"; //from email using site domain.
+// https://habrahabr.ru/company/mailru/blog/282602/
+// https://help.mail.ru/biz/add
+// https://help.mail.ru/biz/verification_settings/other/confirm
 $from_email         = "ilyna.lora@gmail.com";
 
 if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -30,6 +33,7 @@ if($_POST){
     $sender_visa = filter_var($_POST["visa"], FILTER_SANITIZE_STRING);
     $sender_may16 = filter_var($_POST["may16"], FILTER_SANITIZE_STRING);
     $sender_may17 = filter_var($_POST["may17"], FILTER_SANITIZE_STRING);
+    $sender_vegetarian = filter_var($_POST["vegetarian"], FILTER_SANITIZE_STRING);
     $sender_excursioncheckbox = filter_var($_POST["excursioncheckbox"], FILTER_SANITIZE_STRING);
     // $sender_dinner = filter_var($_POST["dinner"], FILTER_SANITIZE_STRING);
     //
@@ -61,10 +65,7 @@ if($_POST){
         print json_encode(array('type'=>'error', 'text' => 'Too short Abstract Submission Message! Please enter something.'));
         exit;
     }*/
-
-    
-    
-    
+        
     
     $file_count = count($attachments['name']); //count total files attached
     $boundary = md5("sanwebe.com"); 
@@ -91,13 +92,14 @@ if($_POST){
         $form_body .= "Affiliation: ".$sender_affiliation."\r\n";
         $form_body .= "Position: ".$sender_position."\r\n";
         $form_body .= "Type of presentation: ".$sender_presentation."\r\n";
-        $form_body .= "Presentation Title: ".$sender_title."\r\n";
+        $form_body .= "Provisional Presentation Title: ".$sender_title."\r\n";
 //        $form_body .= "Abstract Submission Message: ".$sender_message."\r\n";
         $form_body .= "Email adress: ".$sender_email."\r\n";
         $form_body .= "Phone number: ".$country_code."-".$phone_number."\r\n";
         $form_body .= "Do you need visa: ".$sender_visa."\r\n";
         $form_body .= "Short courses, May 16: ".$sender_may16."\r\n";
         $form_body .= "Short courses, May 17: ".$sender_may17."\r\n";
+        $form_body .= "Are you need vegetarian?: ".$sender_vegetarian."\r\n";
         /*
         if($sender_excursioncheckbox == ""){
             $form_body .= "Excursion Kaliningrad and Baltic Federal University: No\r\n";
@@ -151,13 +153,19 @@ if($_POST){
        $headers = "From:".$from_email."\r\n".
         "Reply-To: ".$sender_email. "\n" .
         "X-Mailer: PHP/" . phpversion();
-        $body = $message;
+        $form_body  = "TRACE2017 Registration Form\r\n"; 
+        $form_body .= "===============================\r\n";
+        $form_body .= "First name: ".$sender_name."\r\n";
+//        $body = $message;
+        $body .= $form_body;
     }
         
     $sentMail = mail($recipient_email, $subject, $body, $headers);
     if($sentMail) //output success or failure messages
     {       
-        print json_encode(array('type'=>'done', 'text' => 'Thank you for your registration. To print forms, press Ctr-P.'));
+        print json_encode(array('type'=>'done', 'text' => 
+                                'Thank you for your registration. <hr> This is the provisional registration. To complete your registration you are to submit <a href="http://trace2017.sfu-kras.ru/abstract.html" target="_blank"><u>the abstract of your presentation</u></a>  by March, 10 and <a href="http://trace2017.sfu-kras.ru/conference_fee.html" target="_blank"><u>pay the conference fee by March 31</u></a>.'
+                               ));
 		exit;
     }else{
 //        print json_encode(array('type'=>'error', 'text' => 'Could not send mail! Please check your PHP mail configuration.'));

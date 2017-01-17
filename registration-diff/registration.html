@@ -18,7 +18,6 @@
 <meta name="keywords" content="TRACE 2017, Tree Rings in Archeology, Climatology and Ecology" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfont-->
-<!-- https://jsfiddle.net/ -->
 
 <style type="text/css">
 .auto-style2 {
@@ -44,53 +43,19 @@
 	margin: 5px;
 }
 
-#prog_block_id {
-        display: none;
-        background: #D8FFC0;
-        padding: 5px 10px 5px 10px;
-        margin: 0px 0px 5px 0px;
-        border: none;
-        /*font-weight: bold; */
-        color: #2E6800;
-    }
-    #prog_block_r {
-        display: none;
-        background: #D8FFC0;
-        padding: 5px 10px 5px 10px;
-        margin: 0px 0px 5px 0px;
-        border: none;
-        /*font-weight: bold; */
-        color: #2E6800;
-    }
-    #prog_block_wood_anatomy {
-        display: none;
-        background: #D8FFC0;
-        padding: 5px 10px 5px 10px;
-        margin: 0px 0px 5px 0px;
-        border: none;
-        /*font-weight: bold; */
-        color: #2E6800;
-    }
-
 </style>
 
-
-<!-- -->
+<!-- CSS Forms -->
 <link href="regformstyle.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="favicon.png" />
 </head>
 
 <body>
-<!-- <img src="http://trace2017.sfu-kras.ru/images/trace-images/top.jpg"> -->
 <!-- http://trace2017.sfu-kras.ru/reg/registration.html -->
-<!--<div class="form-style-logo"></div>-->
-<!-- -->
-<div class="container">
-		
+<div class="container">	
 <div class="news-paper">    
  <img height="100%" src="images/trace-images/top.jpg" width="100%">
-
-    <div class="clearfix"></div>			
+    <div class="clearfix"></div> <!-- todo: сделать без этого класса -->			
 			<span class="menu"></span>
 			<div class="menu-strip">
 				<ul>        
@@ -123,7 +88,15 @@
 				});
 			</script>
 			<!-- script for menu -->
-            <!-- -->
+    <div class="col-xs-3"> 
+        <img src="images/trace-images/7.jpg" width="100%" height="100%"><br>
+        <img class="photo-margin" src="images//trace-images/8.jpg" width="100%"><br>
+        <img class="photo-margin6" src="images//trace-images/9.jpg" width="100%">
+        <img src="images//trace-images/1.jpg" width="100%"><br>
+        <img class="photo-margin" src="images//trace-images/2.jpg" width="100%"><br>
+        <img src="images//trace-images/3.jpg" width="100%">
+    </div>
+    <div class="col-xs-6">
             <!-- /MENU --> 			
             	<div class="clearfix"></div>
 					 <div class="top-menu text-center">
@@ -134,11 +107,10 @@
                             <li><a href="excursions.html">Excursions</a></li> |
                             <li><a href="registered_participants.html">Registered participants</a></li> 
                         </ul>
-<!--					<div class="clearfix"></div>-->
 				    </div>
             <!-- MENU/ -->
-<!-- -->
-<div class="form-style" id="contact_form">
+<!-- FORM -->
+    <div class="form-style" id="contact_form">
     <div class="form-style-heading">Registration Form</div>
     
     <!-- <div id="contact_results"></div> -->
@@ -232,61 +204,67 @@
         </div>
         
         <!-- 1616 -->
+        
+        <!-- /1616 -->
         <label for="may16"><span>May 16<span class="required">*</span></span>
-            <select name="may16">
+            <select id="combo16" onchange="getCombo16(this)" name="may16">
                 <option value="I will not participate"> I will not participate</option>
                 <option value="Methods of quantitative and functional wood anatomy"> Methods of quantitative and functional wood anatomy</option>
                 <option value="Process Modeling (the instructor is not yet determined)"> Process Modeling (the instructor is not yet determined)</option> 
             </select>
         </label>
-            <div id="prog_block_wood_anatomy">
-                Georg von Arx and Patrick Fonti, WSL Switzerland.<br><br>
-                The course  introduces to theoretical and practical aspects of analyzing of cell anatomical features along series of tree rings, including sample preparation, cell measurements and data analysis. 
-                    <br><br>
-                In particular the participants will learn about the dos and don'ts of sample preparation and measurements, obtain a demonstration of ROXAS (the most versatile software for cell anatomical measurements) and of some examples of data analyses and applications.
-                    <br>
-                <a href="javascript:window.print()"><img src="print-icon.png"></a>
-            </div>
+        <div id="prog_block_wood_anatomy">
+            <b>Georg von Arx and Patrick Fonti, WSL Switzerland.</b><br><br>
+            
+            The course  introduces to theoretical and practical aspects of analyzing of cell anatomical features along series of tree rings, including sample preparation, cell measurements and data analysis. 
+                <br><br>
+            In particular the participants will learn about the dos and don'ts of sample preparation and measurements, obtain a demonstration of ROXAS (the most versatile software for cell anatomical measurements) and of some examples of data analyses and applications.
+                <br>
+            <a href="javascript:window.print()"><img src="print-icon.png"></a>
+        </div>
         <!-- 1717 -->
         <label for="may17"><span>May 17<span class="required">*</span></span>
-            <select name="may17">
-                <option value="R Fundamentals in Dendrochronology">R Fundamentals in Dendrochronology</option>
-                <option value="Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG">Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG</option>
+            <select id="combo17" onchange="getCombo17(this)" name="may17">
                 <option value="I will not participate">I will not participate</option> 
+                <option value="R Fundamentals in Dendrochronology">R Fundamentals in Dendrochronology</option>
+                <option value="Detecting Climate-Growth Relationships by CLIMTREG">Detecting Climate-Growth Relationships by CLIMTREG</option>
             </select>
         </label>
         <!-- "R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)
         "Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)<br> -->
         <div id="prog_block_r">
-                                The R language and programming environment is increasingly used in dendrochronology. R is the world’s preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. 
-                                <br><br>
-                                There are several R packages for working with tree- ring data, like dplR for standardization and chronology building, treeclim for climate-growth analysis, and pointRes for analyses of pointer years and components of tree resilience. 
-                                <br><br>
-                                Although extremely powerful, R has a steep learning curve that has lead some to postpone using it in their own work. In this interactive workshop, the fundamentals of R will be explained. Further, the aforementioned packages will be demonstrated. 
-                                <br><br>
-                                The workshop format will include a demonstration using onboard data sets but will also include a chance for participants to work with their own data in a collaborative environment. The workshop targets specifically at novice and entry-level R users.<br>
-                                <a href="javascript:window.print()"><img src="print-icon.png"></a>
+            <b>"R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)</b><br><br>
+            The R language and programming environment is increasingly used in dendrochronology. R is the world’s preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. 
+            <br><br>
+            There are several R packages for working with tree- ring data, like dplR for standardization and chronology building, treeclim for climate-growth analysis, and pointRes for analyses of pointer years and components of tree resilience. 
+            <br><br>
+            Although extremely powerful, R has a steep learning curve that has lead some to postpone using it in their own work. In this interactive workshop, the fundamentals of R will be explained. Further, the aforementioned packages will be demonstrated. 
+            <br><br>
+            The workshop format will include a demonstration using onboard data sets but will also include a chance for participants to work with their own data in a collaborative environment. The workshop targets specifically at novice and entry-level R users.<br>
+            <a href="javascript:window.print()"><img src="print-icon.png"></a>
         </div>
 
         <div id="prog_block_id">
-                                <ol>
-                                <li> The philosophy of CLIMTREG - what are the differences compared to other methods;</li>
-                                 <li> Explanations: parts of CLIMTREG; data structures, paths, exercise of installation on PC/notebook; Interested colleagues should bring their own notebooks.</li>
-                                 <li> Opportunities to use CLIMTREG, modes to operate;</li>
-                                 <li> Where to find the results ? paths, data structures, additional tools to display and analyse the result data files;</li>
-                                 <li> Findings obtained from CLIMTREG results: </li>
-                                     * Changing climatic effects on tree growth rates;<br>
-                                     * Share of effects of summerly heat and drought only, compared to the effects of all included climatic variables<br>
-                                     * Proof of the adaptability of trees to changing climate;<br>
-                                     * How to apply climatic scenarios of the future development?<br>
-                                     * On the value of results obtained from scenario simulations ...
-                                 <li> Further development of CLIMTREG
-                                </ol>
-                                <!-- http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/print-icon.html 
-                                http://icons.iconarchive.com/icons/graphicloads/100-flat/48/print-icon.png
-                                -->
-                                <a href="javascript:window.print()"><img src="print-icon.png"></a>
-            </div>
+            <b>Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)</b><br><br>
+            <br>
+            <ol>
+            <li> The philosophy of CLIMTREG - what are the differences compared to other methods;</li>
+             <li> Explanations: parts of CLIMTREG; data structures, paths, exercise of installation on PC/notebook; Interested colleagues should bring their own notebooks.</li>
+             <li> Opportunities to use CLIMTREG, modes to operate;</li>
+             <li> Where to find the results ? paths, data structures, additional tools to display and analyse the result data files;</li>
+             <li> Findings obtained from CLIMTREG results: </li>
+                 * Changing climatic effects on tree growth rates;<br>
+                 * Share of effects of summerly heat and drought only, compared to the effects of all included climatic variables<br>
+                 * Proof of the adaptability of trees to changing climate;<br>
+                 * How to apply climatic scenarios of the future development?<br>
+                 * On the value of results obtained from scenario simulations ...
+             <li> Further development of CLIMTREG
+            </ol>
+            <!-- http://www.iconarchive.com/show/100-flat-icons-by-graphicloads/print-icon.html 
+            http://icons.iconarchive.com/icons/graphicloads/100-flat/48/print-icon.png
+            -->
+            <a href="javascript:window.print()"><img src="print-icon.png"></a>
+        </div>
 
         <!-- -->
         <label for="vegetarian"><span>Are you vegetarian?<span class="required">*</span></span>
@@ -340,9 +318,75 @@
     </form>
     <div id="contact_results"></div>
 </div>
+    </div> <!-- col-xs-6 -->
+    <div class="col-xs-3"> 
+        <img src="images//trace-images/10.jpg" width="100%"><br>
+        <img class="photo-margin" src="images/trace-images/11.jpg" width="100%"><br>
+        <img class="photo-margin6" src="images/trace-images/12.jpg" width="100%">
+        <img src="images//trace-images/4.jpg" width="100%"><br>
+        <img class="photo-margin" src="images/trace-images/5.jpg" width="100%"><br>
+        <img src="images/trace-images/6.jpg" width="100%">
     </div>
+    <div class="col-xs-12 text-center">
+        <img src="images/trace-images/sponsors.jpg" height="100%" width="100%">
+    </div>    
+    <div class="col-xs-12">			 
+        <img src="images/trace-images/bottom6.jpg" height="100%" width="100%"> <!-- height="36" -->
     </div>
-<!-- <div class="form-style-bottom"></div> -->
+</div> <!-- NEWS-PAPER -->
+</div> <!-- CONTAINER -->
+<!-- JavaScript -->
+<script type="text/javascript">
+    function getCombo16(sel) {
+        var value = sel.value; 
+        if( value == "Methods of quantitative and functional wood anatomy"){
+            document.getElementById('prog_block_wood_anatomy').style.display = 'block';
+        }
+        else if( value == "Process Modeling (the instructor is not yet determined)"){
+          document.getElementById('prog_block_wood_anatomy').style.display = 'none';
+        }
+        else if( value == "I will not participate"){
+            document.getElementById('prog_block_wood_anatomy').style.display = 'none';
+        }
+    //alert(value);
+    }
+    function getCombo17(sel) {
+        var value = sel.value; 
+        if( value == "R Fundamentals in Dendrochronology"){
+            document.getElementById('prog_block_r').style.display = 'block';
+          document.getElementById('prog_block_id').style.display = 'none';
+        }
+        else if( value == "Detecting Climate-Growth Relationships by CLIMTREG"){
+          document.getElementById('prog_block_r').style.display = 'none';
+          document.getElementById('prog_block_id').style.display = 'block';
+        }
+        else if( value == "I will not participate"){
+            document.getElementById('prog_block_r').style.display = 'none';
+            document.getElementById('prog_block_id').style.display = 'none';
+        }
+    //alert(value);
+    }
+</script>
+    
+<script type="text/javascript">
+    /**
+    * Function Hides/Shows the block 
+    **/
+    function showHide(element_id) {
+        //Если элемент с id-шником element_id существует
+        if (document.getElementById(element_id)) { 
+            //Записываем ссылку на элемент в переменную obj
+            var obj = document.getElementById(element_id); 
+            //Если css-свойство display не block, то: 
+            if (obj.style.display != "block") { 
+                obj.style.display = "block"; //Показываем элемент
+            }
+            else obj.style.display = "none"; //Скрываем элемент
+        }
+        //Если элемент с id-шником element_id не найден, то выводим сообщение
+        else alert("Элемент с id: " + element_id + " не найден!"); 
+    }   
+</script>
 
 <script language="javascript">
   function onSelect16(obj) {
@@ -369,6 +413,7 @@
     }
   }
 </script>
+    
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 <script type="text/javascript">
@@ -444,16 +489,10 @@ $("#contact_body").submit(function(e){
 	}
 });
 </script>
-<div class="col-xs-12 text-center">
-                
-                	<img  src="images/trace-images/sponsors.jpg" height="100%" width="100%">
-            </div>    
-<div class="col-xs-12">
-					 <!--<p>TRACE &copy; 2017 All rights reserved | <a href="http://sfu-kras.ru">SFU</a> | <a href="https://eng.kantiana.ru">IKBFU</a> </p>--> 
-					 <img height="36" src="images/123/bottom.jpg" width="100%">
-                </div>
+    
+
             
-            <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
