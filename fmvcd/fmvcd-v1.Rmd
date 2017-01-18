@@ -11,7 +11,6 @@ setwd("C:/Users/IVA/Dropbox/24516/trace2017/fmvcd/krest/"); getwd()
 file_list <- list.files(pattern = "\\.cli$"); file_list
  
 for (file in file_list){
-       
   # if the merged dataset doesn't exist, create it
   if (!exists("dataset")){
     dataset <- read.table(file, header=FALSE, sep="")
@@ -29,15 +28,15 @@ dataset_krest <- dataset; names(dataset_krest) <- c("day", "month", "year", "pre
 #### To detect missing data.
 ```{r filter_cli}
 dataset_krest_prec_missing <- dataset_krest[dataset_krest$prec == -9999, c(1,2,3,4)]; length(dataset_krest_prec_missing[,1])
-dataset_krest_temp_missing <- dataset_krest[dataset_krest$temp == -9999, c(1,2,3,5)]; length(dataset_krest_temp_missing[,1])
+dataset_krest_temp_missing <- dataset_krest[dataset_krest$temp == -9999, c(1,2,3,5)]; length(dataset_krest_temp_missing[,1]); # row.names.data.frame(dataset_krest_temp_missing)
 dataset_krest_prec <- dataset_krest[dataset_krest$prec != -9999, c(1,2,3,4)]; summary(dataset_krest_prec)
 dataset_krest_temp <- dataset_krest[dataset_krest$temp != -9999, c(1,2,3,5)]; summary(dataset_krest_temp)
 
 ```
 #### Replacement of -9999 to a default value NA
 ```{r set_NA}
-dataset_krest[dataset_krest$prec == -9999, 4] <- NA 
-dataset_krest[dataset_krest$temp == -9999, 5] <- NA
+dataset_krest[dataset_krest$prec == -9999, 4] <- NA; 
+dataset_krest[dataset_krest$temp == -9999, 5] <- NA; summary(dataset_krest)
 ```
 #### replace missing data with appropriate design values.
   + Completely missing at random?
@@ -48,9 +47,69 @@ dataset_krest[dataset_krest$temp == -9999, 5] <- NA
 require(dplyr); require(VIM); require(mice)
 ```
 #### replace missing data with appropriate values calculated using the neural network.
-```{r}
+```{r create_train}
+#install.packages('neuralnet', dependencies=TRUE, repos='http://cran.rstudio.com/')
+library(neuralnet)
+
+train_out <- dataset_krest_temp$temp / 10.0;
+train_in <- dataset_krest_temp[, c(1,2,3)]
+#train_in <- c(1: length(train_out))
+#train_in <- as.numeric(rownames(dataset_krest_temp))
+#set.seed(1410) # Make the sample reproducible
+#train.sample <- data.frame(NUM=train_in, TEMP=train_out); summary(train.sample)
+#train.sample <- dataset_krest_temp
+train.sample <- data.frame(train_in, temp=train_out); summary(train.sample)
 ```
+#### Train neuralNet 
+```{r train_neuralnet}
+rm(net.temp)
+train.sample <- train.sample[train.sample$year == 1967,]
+net.temp <-  neuralnet(temp ~ day + month + year, train.sample, hidden = c(7,11,7), rep = 1, linear.output = TRUE, threshold = 0.01, stepmax = 10000)
+
+#testdata <- as.numeric(rownames(dataset_krest_temp_missing))
+testdata <- dataset_krest_temp_missing[,c(1,2,3)]
+testdata <- train.sample[, c(1,2,3)]
+net.results <- compute(net.temp, testdata) #Run them through the neural network
+ls(net.results)
+# Lets see the results
+print(head(net.results$net.result))
+plot(1:length(train.sample$temp), train.sample$temp)
+
+```
+#### syntetic
+```{r syntetic}
+s_in <- 1:length(train.sample$temp)
+s_out <- train.sample$temp
+tr <- data.frame(X=s_in, Y=s_out)
+plot(tr)
+net.tr<-  neuralnet(formula = 'Y ~ X', data = tr, hidden = c(4,7,4), rep = 1, linear.output = TRUE, threshold = 0.01, stepmax = 100000)
+net.res <- compute(net.tr, tr$X)
+print(head(net.res$net.result))
+plot(net.tr)
+```
+#### I'm trying to use R's neuralnet package  for prediction.
+  + <http://cran.r-project.org/web/packages/neuralnet/neuralnet.pdf>
+```{r so}
+# http://stats.stackexchange.com/questions/65292/r-neuralnet-compute-give-a-constant-answer
+
+Var1 <- as.integer(runif(50, 0, 100))
+sqrt.data <- data.frame(Var1, Sqrt=as.integer(sqrt(Var1)))
+plot(sqrt.data)
+nnet<-net.sqrt <- neuralnet(Sqrt~Var1, sqrt.data, hidden=10, threshold=0.01)
+plot(nnet)
+compute(net.sqrt, (1:10)^2)$net.result
+
+
+```
+
 #### Links
+  + https://www.r-bloggers.com/using-neural-network-for-regression/
+  + https://www.r-bloggers.com/fitting-a-neural-network-in-r-neuralnet-package/
+  + https://www.r-bloggers.com/a-primer-on-universal-function-approximation-with-deep-learning-in-torch-and-r/
+  + https://www.r-bloggers.com/practical-implementation-of-neural-network-based-time-series-stock-prediction-part-1/
+  + https://heuristically.wordpress.com/2011/11/17/using-neural-network-for-regression/
+  + https://beckmw.wordpress.com/2013/08/12/variable-importance-in-neural-networks/
+  + https://beckmw.wordpress.com/tag/neuralnet/
 
   + http://r-analytics.blogspot.ru/2014/09/r.html#.WHW04dKLRhE
   + http://user2016.org/
