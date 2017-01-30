@@ -164,7 +164,7 @@ if($_POST){
     if($sentMail) //output success or failure messages
     {       
         print json_encode(array('type'=>'done', 'text' => 
-                                'Thank you for your registration. <hr> This is the provisional registration. To complete your registration you are to submit <a href="http://trace2017.sfu-kras.ru/abstract.html" target="_blank"><u>the abstract of your presentation</u></a>  by March, 10 and <a href="http://trace2017.sfu-kras.ru/conference_fee.html" target="_blank"><u>pay the conference fee by March 31</u></a>.'
+                                'Thank you for your registration. <hr> This is the provisional registration. To complete your registration you are to submit <a href="http://trace2017.sfu-kras.ru/abstract.html" target="_blank"><u>the abstract of your presentation</u></a>  by March, 10 and <a href="http://trace2017.sfu-kras.ru/conference_fee.html" target="_blank"><u>pay the conference fee by March 31</u></a>. <hr> <a href="javascript:window.print()"><img src="print-icon.png"></a>'
                                ));
 		exit;
     }else{
