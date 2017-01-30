@@ -18,7 +18,6 @@
 <meta name="keywords" content="TRACE 2017, Tree Rings in Archeology, Climatology and Ecology" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfont-->
-
 <style type="text/css">
 .auto-style2 {
 	margin-left: 5px;
@@ -42,7 +41,6 @@
 .auto-style8 {
 	margin: 5px;
 }
-
 </style>
 
 <!-- CSS Forms -->
@@ -51,7 +49,9 @@
 </head>
 
 <body>
-<!-- http://trace2017.sfu-kras.ru/reg/registration.html -->
+<!-- http://trace2017.sfu-kras.ru/reg/registration.html 
+  file:///home/larisa/Dropbox/git/trace2017/dev/reg/registration.html
+  -->
 <div class="container">	
 <div class="news-paper">    
  <img height="100%" src="images/trace-images/top.jpg" width="100%">
@@ -109,7 +109,7 @@
                         </ul>
 				    </div>
             <!-- MENU/ -->
-<!-- FORM -->
+    <!-- FORM -->
     <div class="form-style" id="contact_form">
     <div class="form-style-heading">Registration Form</div>
     
@@ -182,6 +182,10 @@
           <h4>
           Please, read thoroughly the information in <a href="http://trace2017.sfu-kras.ru/travel_info.html"><b><u>Visa and Travel Info</u></b></a> and follow the instructions.<br><br>
           Please, remember, the documents are to be provided by<b> March, 10th</b>. </h4>
+          <hr>Make sure total file size is less than 2 MB!<hr>
+          <label><span>PDF copy of your international passport*</span>
+                <input type="file" name="file_attach[]" multiple />
+            </label>
         </div>
         
         
@@ -209,10 +213,21 @@
         <label for="may16"><span>May 16<span class="required">*</span></span>
             <select id="combo16" onchange="getCombo16(this)" name="may16">
                 <option value="I will not participate"> I will not participate</option>
+                <option value="R Fundamentals in Dendrochronology">R Fundamentals in Dendrochronology</option>
                 <option value="Methods of quantitative and functional wood anatomy"> Methods of quantitative and functional wood anatomy</option>
-                <option value="Process Modeling (the instructor is not yet determined)"> Process Modeling (the instructor is not yet determined)</option> 
             </select>
         </label>
+        <div id="prog_block_r">
+            <b>"R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)</b><br><br>
+            The R language and programming environment is increasingly used in dendrochronology. R is the world’s preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. 
+            <br><br>
+            There are several R packages for working with tree- ring data, like dplR for standardization and chronology building, treeclim for climate-growth analysis, and pointRes for analyses of pointer years and components of tree resilience. 
+            <br><br>
+            Although extremely powerful, R has a steep learning curve that has lead some to postpone using it in their own work. In this interactive workshop, the fundamentals of R will be explained. Further, the aforementioned packages will be demonstrated. 
+            <br><br>
+            The workshop format will include a demonstration using onboard data sets but will also include a chance for participants to work with their own data in a collaborative environment. The workshop targets specifically at novice and entry-level R users.<br>
+            <a href="javascript:window.print()"><img src="print-icon.png"></a>
+        </div>
         <div id="prog_block_wood_anatomy">
             <b>Georg von Arx and Patrick Fonti, WSL Switzerland.</b><br><br>
             
@@ -226,23 +241,12 @@
         <label for="may17"><span>May 17<span class="required">*</span></span>
             <select id="combo17" onchange="getCombo17(this)" name="may17">
                 <option value="I will not participate">I will not participate</option> 
-                <option value="R Fundamentals in Dendrochronology">R Fundamentals in Dendrochronology</option>
                 <option value="Detecting Climate-Growth Relationships by CLIMTREG">Detecting Climate-Growth Relationships by CLIMTREG</option>
+                <option value="Process Modeling (the instructor is not yet determined)"> Process Modeling (the instructor is not yet determined)</option> 
             </select>
         </label>
         <!-- "R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)
         "Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)<br> -->
-        <div id="prog_block_r">
-            <b>"R Fundamentals in Dendrochronology" (Ernst van der Maaten, University of Greifswald, Germany)</b><br><br>
-            The R language and programming environment is increasingly used in dendrochronology. R is the world’s preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. 
-            <br><br>
-            There are several R packages for working with tree- ring data, like dplR for standardization and chronology building, treeclim for climate-growth analysis, and pointRes for analyses of pointer years and components of tree resilience. 
-            <br><br>
-            Although extremely powerful, R has a steep learning curve that has lead some to postpone using it in their own work. In this interactive workshop, the fundamentals of R will be explained. Further, the aforementioned packages will be demonstrated. 
-            <br><br>
-            The workshop format will include a demonstration using onboard data sets but will also include a chance for participants to work with their own data in a collaborative environment. The workshop targets specifically at novice and entry-level R users.<br>
-            <a href="javascript:window.print()"><img src="print-icon.png"></a>
-        </div>
 
         <div id="prog_block_id">
             <b>Detecting Climate-Growth Relationships by Use of the Statistical Analysis Tool CLIMTREG" (Wolfgang  Beck, Johann Heinrich von Thuenen Institute, Germany)</b><br><br>
@@ -278,7 +282,7 @@
             Three optional excursions (half a day each) start at 9:30, May, 21
         </div>
         
-        <label for="name"><span>Excursion:<span class="required">*</span><br><br><br><br></span>
+        <label for="name"><span>Excursion:<span class="required">*</span><br><br><br><br><br></span>
             <input type="radio" name="excursioncheckbox" value="no excursion"  checked="checked"/> no excursion<br>
             <input type="radio" name="excursioncheckbox" value="Baltic Federal University - free"  checked="checked"/> Baltic Federal University - free<br>
             <input type="radio" name="excursioncheckbox" value="Kaliningrad - 20 euros"/> Kaliningrad - 20 euros<br>
@@ -339,29 +343,29 @@
 <script type="text/javascript">
     function getCombo16(sel) {
         var value = sel.value; 
-        if( value == "Methods of quantitative and functional wood anatomy"){
-            document.getElementById('prog_block_wood_anatomy').style.display = 'block';
+        if( value == "R Fundamentals in Dendrochronology"){
+            document.getElementById('prog_block_r').style.display = 'block';
+            document.getElementById('prog_block_wood_anatomy').style.display = 'none';
         }
-        else if( value == "Process Modeling (the instructor is not yet determined)"){
-          document.getElementById('prog_block_wood_anatomy').style.display = 'none';
+        else if( value == "Methods of quantitative and functional wood anatomy"){
+            document.getElementById('prog_block_wood_anatomy').style.display = 'block';
+            document.getElementById('prog_block_r').style.display = 'none';
         }
         else if( value == "I will not participate"){
+            document.getElementById('prog_block_r').style.display = 'none';
             document.getElementById('prog_block_wood_anatomy').style.display = 'none';
         }
     //alert(value);
     }
     function getCombo17(sel) {
         var value = sel.value; 
-        if( value == "R Fundamentals in Dendrochronology"){
-            document.getElementById('prog_block_r').style.display = 'block';
-          document.getElementById('prog_block_id').style.display = 'none';
+        if( value == "Process Modeling (the instructor is not yet determined)"){
+            document.getElementById('prog_block_id').style.display = 'none';
         }
         else if( value == "Detecting Climate-Growth Relationships by CLIMTREG"){
-          document.getElementById('prog_block_r').style.display = 'none';
           document.getElementById('prog_block_id').style.display = 'block';
         }
         else if( value == "I will not participate"){
-            document.getElementById('prog_block_r').style.display = 'none';
             document.getElementById('prog_block_id').style.display = 'none';
         }
     //alert(value);
@@ -417,7 +421,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 <script type="text/javascript">
-var allowed_file_size = "1048576";
+var allowed_file_size = "1848576";
+//var allowed_file_size = "1048576";
 //var allowed_file_size = "10485760";
 var allowed_files = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg'];
 var border_color = "#C2C2C2"; //initial input border color
